@@ -1,0 +1,53 @@
+.header-buttonr {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.4s ease-in;
+  i[class^='fa'] {
+    position: relative;
+    text-align: center;
+  }
+  //start click effect
+  &:before {
+    content: '';
+    background-color: aliceblue;
+    border-radius: 30px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale(0.001, 0.001);
+  }
+  &:focus {
+    outline: 0;
+    color: #fff;
+    &:before {
+      animation: effect_dylan 3.0s ease-out;
+    }
+  }
+  &:active {
+    outline: 0;
+    color: #fff;
+    &:before {
+      animation: effect_dylan 3.0s ease-out;
+    }
+  }
+}
+
+@keyframes effect_dylan {
+  50% {
+    transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+  99% {
+    transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+}
+

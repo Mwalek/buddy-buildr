@@ -1,0 +1,564 @@
+/*
+	@package @package Buddy_Buildr_Pro
+*/
+
+/*
+################
+               Import
+################
+*/
+
+@import 'base/reset';		    //reset styles
+@import 'base/variables';		//variables
+@import 'base/mixins';			//mixins
+@import 'base/placeholders';	//placeholders
+@import 'base/typography';		//typography
+@import 'base/wordpress';		//wordpress default classes
+@import 'base/buttons'; 				//wordpress buttons
+
+/*
+################
+               Generic
+################
+*/
+
+body { font-family: $body-font; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: greyscale; 
+	
+	&.no-scroll {
+		overflow-y: hidden;
+	}
+	
+}
+
+a { color: $primary-color; @include animate( color, 320ms );
+	&:hover,
+	&:focus { text-decoration: none; color: $dark-grey; }
+}
+
+.background-image { background-position: center center; background-size: cover; background-repeat: no-repeat; }
+
+.table { display: table; width: 100%; height: 100%; 
+	.table-cell { display: table-cell; width: 100%; height: 100%; vertical-align: middle; }
+}
+
+.text-caps {
+	text-transform: uppercase;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.kill_margin {
+	margin: 0px;
+}
+
+.hideoverflow {
+	overflow: hidden;
+}
+
+
+
+/*
+################
+               Header
+################
+*/
+
+/*
+	App Header
+	------------------------------------------------
+*/
+.site-header-app {
+	.site-header-item {
+		color: $appify-header-color; /*default*/
+		margin:10px; 
+		line-height:20px;
+		display: inline-block;
+	}
+	.site-title {
+		a {line-height: 40px;}
+	}
+}
+
+.site-header-app {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
+  grid-template-areas: "hl"
+  					   "hr";
+}
+
+
+/*
+	Default Header
+	------------------------------------------------
+*/
+
+.site-header *:focus {
+	outline: none;
+}
+
+/* Style the site-header-main links */
+.site-header-main { font-size: 0; overflow: hidden; background-color: $header-background-color;
+	height: unset; overflow: unset; padding: $p10;
+	a { color: $header-color;
+		&:hover {background-color: $hover-color;}
+		color: $header-color;
+		padding: 10px;
+		text-decoration: none;
+		font-size: 18px;
+		line-height: 25px;
+		line-height: 20px;
+		border-radius: 4px;
+	}
+	a.header-user-icon { padding: 0; }
+	a.logo { font-size: 25px; font-weight: bold; }
+	.main-navigation {
+		.sub-menu {
+			a {color: $grey;
+				&:hover {color: $grey;}
+			}
+		}
+	}
+	.basic_icons { font-size: 0;
+		a { border-radius: 50%; width: 40px; height: 40px;}
+		label { padding: 10px; display: inline-block; cursor: pointer; color: inherit; }
+	}
+	.hamburger {display: inline-block; float: left; padding: 9px 10px 10px 10px; cursor: pointer; margin: 0;
+		&:hover,
+		&:focus { border-radius: 30%; background-color: $hover-color;}
+	}
+	.site-header-item {
+		color: $header-color; /*default*/
+	}
+}
+
+/* Header Height ( site-branding height ) */
+.site-branding { width: calc(100% - 120px); float: left; height: 40px;
+	.site-title { line-height: 30px; height: inherit; padding: 0;
+		a { color: inherit; width: 105px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+			&:hover {background-color: unset;}
+		}
+	}
+	.icon { color: $header-color; }
+	* {display: inline-block;}
+}
+
+.site-header-main-right {
+    float: none;
+    font-size: 0;
+}
+
+.site-header-main-right, .basic_icons, .basic_icons a {
+	display: inline-block;
+}
+
+.site-header.responsive {
+	.site-header-main-right {display: block;}
+	.site-header-main  {padding: 0;}
+}
+
+.hideoverflow2 {
+	overflow: hidden;
+}
+
+#Dmasthead {
+	height: 60px;
+}
+
+.header-site-search.transition-left {
+	top: -60px;
+	height: 60px;
+}
+
+/*
+################
+               Search
+################
+*/
+
+.header-site-search { background-color: #d44646; padding: 10px; font-size: 0;
+	.search-field {
+		height: 40px;
+		padding: 5px;
+	}
+}
+
+.header-site-search p {
+	padding: 10px;
+	color: #fff;
+	font-size: 18px;
+	display: inline-block;	
+	line-height: 20px;
+}
+
+.header-site-search-box .search-wrap .search-submit {
+	display: none;
+}
+
+.header-site-search-box {
+	display: inline-block;
+	width: calc(100% - 40px);
+	position: relative;
+	bottom: 3px;
+}
+
+.header-site-search-box form, .header-site-search-box .search-wrap, .header-site-search-box .search-field {
+	width: 100%;
+}
+
+.header-site-search span, .header-site-search i {
+	font-size: 18px;
+	line-height: 20px;
+	padding: 10px;
+	color: #fff;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
+
+/*
+################
+               Navigation (Nav Bar)
+################
+*/
+
+.hamburger div {
+	width: 20px; 
+	height: 3px; 
+	background-color: $header-color; 
+	margin: 3px 0;
+	display: inherit;
+}
+
+.main-navigation { display: none;
+	ul ul {background: $mobile-menu-background;}
+	&.responsive {display: block; background: $mobile-menu-background;}
+}
+
+/* Set up round style menu */
+.site-header-main {
+	.menu-item-has-children > a {border-radius: 0;
+		&:hover {border-radius: 0;}
+	}
+	ul li:hover > a {background-color: $hover-color;}
+}
+
+.responsive {
+	.site-branding {padding: 10px; height: 60px;}
+	.basic_icons { padding: 10px 0px; position: relative; right: 10px; }
+	.main-navigation a {padding: 15px 10px;}
+}
+
+.#{$theme-class} {
+	.main-navigation ul ul {position: unset; width: 100%;
+		a {width: unset;}
+	}
+}
+
+/*
+################
+               Logged in / Logged Out
+################
+*/
+
+/* Logged Out */
+.logged-out {
+	.community_menu, #Notif, .alert_count {display:none;}
+	.site-header .register {
+		border-radius: 5px;
+		padding: 10px 20px;
+	}
+	.site-branding {
+		width: calc(100% - 80px);
+	}
+	.alert_icon {display:none;}
+}
+
+/*
+################
+               Login / Sign up (MODALS)
+################
+*/
+
+/* [Object] Modal
+ * =============================== */
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(0,0,0, .9);
+  transition: opacity .25s ease;
+  z-index: 10;
+}
+
+.modal__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.modal-state {
+  display: none;
+}
+
+.modal-state:checked + .modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-state:checked + .modal .modal__inner {
+  top: 0;
+}
+
+.#{$theme-class} .modal__inner {
+  transition: top .25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 90%;
+  box-sizing: border-box;
+}
+
+.modal__close {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+
+.modal__close:after,
+.modal__close:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 1.5em;
+  background: #ccc;
+  display: block;
+  transform: rotate(45deg);
+  left: 50%;
+  margin: -3px 0 0 -1px;
+  top: 0;
+}
+
+.modal__close:hover:after,
+.modal__close:hover:before {
+  background: #aaa;
+}
+
+.modal__close:before {
+  transform: rotate(-45deg);
+}
+
+/*
+################
+               Footer Section
+################
+*/
+
+/*
+################
+               OFF CANVAS (SIDENAVs)
+################
+*/
+.notifications_container, .community_container {display: none;}
+.jackrabbit {
+	.community_container {display: none;}
+	.notifications_container {display: block;}
+}
+
+/* */
+
+/*
+################
+               MEDIA QUERIES
+################
+*/
+
+
+
+@media (min-width: $breakpoint-tablet) {
+  
+}
+
+@media (min-width: 650px) {
+	.site-header h3 {
+		line-height: 20px;
+	}
+	.site-header-app { display: grid; grid-template-columns: 50% 50%; grid-template-rows: auto ; grid-template-areas: "hl hr";
+		.header-social-area {
+			float: right;
+		}
+
+		.header-left .toggle-header-right {
+			display: none;
+		}
+
+		.header-wrapper .header-right {
+			display: block;
+		}
+	}
+}
+
+@media (min-width: $lg) {
+
+	nav.main-navigation {
+		display: inline-block;
+	}
+	header .icon {
+		display: none;
+	}
+	/* Sub menu fix */
+	.site-header-main {overflow: unset;height: 90px;padding: 20px 10px;
+		a {float: left; color: $desktop-color; text-align: center; border-radius: 4px; padding: 10px;}
+		a.header-user-icon {padding: 0;}
+		.basic_icons {
+			a {border-radius: 4px; float: left; color: inherit;}
+			label {padding: 10px; display: inline-block; color: inherit;}
+		}
+	}
+	.site-header-common > *, .site-branding * {
+		display: inline-block;
+	}
+	/* Float the link section to the right */
+	.site-header-main-right {
+	  float: right;
+	  min-width: 400px;
+	 /* width: calc(100% - 45px);*/
+	}
+
+	.menu-templates-container {
+		display: inline-block;
+	}
+	.main-navigation {background: unset; width: auto;
+		li {float: left;}
+		#primary-menu > li:nth-last-child(-n+2) > .sub-menu { right: 0; left: auto; border-radius: 2px 0 2px 2px;}
+		ul li:nth-last-child(-n+2) ul li:hover > ul, ul li:nth-last-child(-n+2) ul li.focus > ul {
+			right: 100%;
+			left: unset;
+		}
+		#primary-menu > li:nth-child(n+6) { display: none; }
+		&.responsive {background: unset;}
+	} 
+	/* Set up round style menu */
+	/* Sub Menu Styles */
+	.site-header-main {
+		.menu-item-has-children a {border-radius: 2px 2px 0 0;
+			&:hover {border-radius: 2px 2px 0 0;}
+		}
+		.sub-menu {border-radius: 0 2px 2px;
+			a { border-radius: 0;
+				&:hover {background-color: $hover-color;}
+			}
+		}
+	}
+	.site-header-common .sub-menu a {
+		border-radius: 0;
+		color: $header-background-color;
+	}
+	.site-header-common .menu-item-has-children > a:after {
+		content: "\25BC";
+		font-size: 12px;
+	    left: 5px;
+	    bottom: 2px;
+	    position: relative;
+	    margin-right: 5px;
+	}
+	.site-header-common ul li.menu-item-has-children:hover > a {
+	    color: $header-color;
+	}
+
+	.main-navigation ul > li.menu-item-has-children > a {width: auto;}
+
+	.#{$theme-class} {
+		.main-navigation ul.menu {
+			ul.sub-menu { position: absolute; background-color: $desktop-color; width: 200px;
+				a {width: 200px;}
+			}
+			> li.menu-item-has-children > a {width: auto;}
+			.sub-menu {display: none;}
+		}
+		li.menu-item-has-children {overflow: unset;}
+	}
+
+	li:nth-last-child(-n+2) .sub-menu {
+		display: none;	
+	}
+
+	li:nth-last-child(-n+2) .sub-menu:hover {
+		display: block;	
+	}
+
+	li.menu-item-has-children { overflow: hidden;
+		a:hover + .sub-menu {display: block;}
+	}
+/* Exterior Class: This class is used for pages that are not APP pages. */
+	.#{$exterior-class} {
+		.site-header {
+			.site-branding { width: unset; float: none;
+				.hamburger {display: none;}
+				.site-title a { width: unset; max-width: 240px; 
+					&:hover {background-color: $hover-color;}
+				}
+			}
+		}
+	}
+	.#{$theme-class} .modal__inner {
+		min-height: 450px; width: 50%; height: 50%; box-sizing: unset;
+	}
+
+	.bb-login input.has-padding {
+		padding: 16px 20px 16px 50px;
+	}
+	.buddybuildr .main-navigation li:hover > .sub-menu {overflow: visible; display: block;}
+
+	.header-site-search.transition-left {
+		top: -60px;
+		padding: 10px;
+		height: 60px;
+	}
+
+	#Dmasthead {
+		height: 90px;
+	}
+}
+
+
+
+@media only screen and (min-width: 350px) {
+	.site-branding .site-title a {
+		width: 150px;
+	}
+}
+
+@media only screen and (min-width: 400px) {
+	.site-branding .site-title a {
+		width: 200px;
+	}
+}
+
+@media only screen and (min-width: 500px) {
+	.site-branding .site-title a {
+		width: 300px;
+	}
+}
