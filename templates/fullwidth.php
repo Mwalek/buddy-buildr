@@ -4,7 +4,7 @@
 Template Name: Full Width (For Page Builders)
 */
 
-buddybuildr_header_switcher(); ?>
+get_header(); ?>
 
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main">

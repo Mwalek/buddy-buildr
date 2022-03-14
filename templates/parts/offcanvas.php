@@ -9,7 +9,7 @@
   </nav>
 </div><!-- #Lsidenav -->
 
-<div id="Rsidenav" class="sidenav rsidenav">
+<div id="Rsidenav" class="sidenav rsidenav jackrabbit">
 
   <div id="community_container" class="community_container">
     <div class="side-search"><?php get_search_form(); ?></div>
@@ -28,35 +28,8 @@
     </div><!-- .community_menu -->
   </div><!-- .community_container -->
 
-  <div id="notifications_container" class="notifications_container">
+  <div id="notifications_container" class="notifications_container" style="display:none;">
     <?php buddybuildr_notifications_menu() ?>
   </div><!-- .notifications_container -->
 
 </div><!-- #Rsidenav -->
-
-<!-- MODAL STARTS -->
-
-<input class="modal-state" id="modal-1" type="checkbox" />
-<div class="modal">
-  <label class="modal__bg" for="modal-1"></label>
-  <div class="modal__inner">
-    <label class="modal__close" for="modal-1"></label>
-    <h2>Login</h2>
-    <?php $redirect_to = '';?>
-    <div class="bb-login">
-    <form name="loginform" id="loginform" action="<?php echo site_url( '/wp-login.php' ); ?>" method="post">
-    <p class="fieldset"><input class="full-width has-padding has-border" id="user_login" type="text" size="20" value="" name="log" placeholder=" Username / E-mail"></p>
-    <p class="fieldset"><input class="full-width has-padding" id="user_pass" type="password" size="20" value="" name="pwd" placeholder="Password"></p>
-    <p class="fieldset"><input id="rememberme" type="checkbox" value="forever" name="rememberme"> Remember me</p>
-    <p class="fieldset"><input class="full-width bb-curves bb-login-submit" id="wp-submit" type="submit" value="Login" name="wp-submit"></p>
-    <input type="hidden" value="<?php echo esc_attr( $redirect_to ); ?>" name="redirect_to">
-    <input type="hidden" value="1" name="testcookie">
-    </form>
-  </div><!--.bb-login-->
-    <div class="signing_links">
-      New here? <a href="<?php echo site_url('/wp-login.php?action=register&redirect_to=' . get_permalink());?>">Sign Up</a> | Lost Password?<a href="<?php echo wp_lostpassword_url(); ?>" title="Lost Password"> Get a new one</a>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL ENDS -->

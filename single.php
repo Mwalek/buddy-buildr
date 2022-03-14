@@ -7,7 +7,8 @@
  * @package M5_TFW
  */
 
-buddybuildr_header_switcher(); ?>
+get_header();
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
