@@ -28,7 +28,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('import', function() {
-    gulp.src('dest/style.css')
+    gulp.src('dist/style.css')
         .pipe(cssimport([]))
         .pipe(gulp.dest('./fontawesome'));
 }); 
