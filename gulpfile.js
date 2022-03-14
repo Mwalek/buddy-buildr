@@ -16,7 +16,7 @@ gulp.task('css', function () {
 	];
 	return gulp.src('./src/*.css')
 		.pipe(postcss(processors))
-		.pipe(gulp.dest('./dest'));
+		.pipe(gulp.dest('./dist'));
 });
 
 gulp.task('import', function() {
