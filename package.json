@@ -17,9 +17,10 @@
   "author": "Mwale Kalenga",
   "license": "GPL-3.0",
   "devDependencies": {
-    "gulp": "^4.0.2",
     "css-mqpacker": "^3.1.0",
     "cssnano": "^2.6.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-postcss": "^5.1.10",
     "postcss-import": "^6.2.0"
   }
