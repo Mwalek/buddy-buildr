@@ -18,11 +18,15 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "css-mqpacker": "^3.1.0",
+    "cssimport": "^0.1.22",
     "cssnano": "^2.6.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-postcss": "^5.1.10",
     "gulp-sourcemaps": "^3.0.0",
     "postcss-import": "^6.2.0"
+  },
+  "dependencies": {
+    "gulp-cssimport": "^7.0.0"
   }
 }
