@@ -27,22 +27,28 @@ gulp.task('style', function () {
 		.pipe(gulp.dest('./dist'));
 });
 
-gulp.task('import', function(){
+gulp.task('import', function(done){
     gulp.src('dist/style.css')
         .pipe(cssimport([]))
         .pipe(gulp.dest('./fontawesome'));
+		done();
 });
 
-gulp.task('watch', function() {
-    gulp.watch('*.scss', ['sass']);
+
+gulp.task('default', gulp.series('style', 'import'));
+
+/*gulp.task('watch', function() {
+    //gulp.watch('*.scss', ['sass']);
+	gulp.watch( styleWatch , ['style']);
+	gulp.watch( styleWatch , ['import'])
 })
 
 gulp.task('default', function(done) { // <--- Insert `done` as a parameter here...
     gulp.series('style','import', 'watch')
     done(); // <--- ...and call it here.
-})
+})*/
 
 /*gulp.task('watch', gulp.series('default', function() {
 	gulp.watch( styleWatch , ['style']);
-	//gulp.watch( styleWatch , ['import']);
+	gulp.watch( styleWatch , ['import']);
 }));*/
