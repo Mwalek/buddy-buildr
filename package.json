@@ -17,14 +17,14 @@
   "author": "Mwale Kalenga",
   "license": "GPL-3.0",
   "devDependencies": {
-    "css-mqpacker": "^3.1.0",
+    "css-mqpacker": "^7.0.0",
     "cssimport": "^0.1.22",
-    "cssnano": "^2.6.1",
+    "cssnano": "^5.1.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
-    "gulp-postcss": "^5.1.10",
+    "gulp-postcss": "^9.0.1",
     "gulp-sourcemaps": "^3.0.0",
-    "postcss-import": "^6.2.0"
+    "postcss-import": "^14.0.2"
   },
   "dependencies": {
     "gulp-cssimport": "^7.0.0"
