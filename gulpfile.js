@@ -11,7 +11,7 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var styleWatch = 'src/*.css';
 
-gulp.task('style', function () {
+function style() {
 	var processors = [
 		atImport,
 		mqpacker,
@@ -25,17 +25,24 @@ gulp.task('style', function () {
 		.pipe(postcss(processors))
 		.pipe( sourcemaps.write('./') )
 		.pipe(gulp.dest('./dist'));
-});
+}
 
-gulp.task('import', function(done){
+function import_styles(done){
     gulp.src('dist/style.css')
         .pipe(cssimport([]))
         .pipe(gulp.dest('./fontawesome'));
 		done();
-});
+}
 
 
-gulp.task('default', gulp.series('style', 'import'));
+gulp.task('default', gulp.series(style, import_styles));
+
+function watch_files() {
+	gulp.watch( styleWatch , style );
+	gulp.watch( styleWatch , import_styles );
+}
+
+gulp.task( "watch", watch_files );
 
 /*gulp.task('watch', function() {
     //gulp.watch('*.scss', ['sass']);
