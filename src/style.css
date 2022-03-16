@@ -2697,6 +2697,6 @@ border-radius: 9px;
 	}
 }
 
-.author-text {
-	color:red !important;
+.author-text .posted-on {
+	color:rgb(0, 255, 64) !important;
 }
