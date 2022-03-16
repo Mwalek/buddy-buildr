@@ -59,6 +59,12 @@ h6 {
 	font-weight: 300;
 }
 
+h1,
+h2,
+h3 {
+	margin-bottom: 30px;
+}
+
 .buddybuildr #page h1, .buddybuildr #page h2,
 .buddybuildr #page h3, .buddybuildr #page h4,
 .buddybuildr #page h5, .buddybuildr #page h6 {
