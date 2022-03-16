@@ -66,11 +66,47 @@ function buddybuildr_customize_register( $wp_customize ) {
 	// add the control for the Sticky Header
 	$wp_customize->add_control( 'sticky_header', array(
         'type' => 'checkbox',
-        'priority' => 11,
+        'priority' => 12,
         'section' => 'header_settings',
         'settings' => 'sticky_header',
         'label' => esc_html__('Enable sticky header Site-wide.', 'buddy-buildr'),
     ));
+
+    // add the setting for the Header Size
+    $wp_customize->add_setting( 'header-size', array(
+        'default' => 'header-size-min',
+        'transport'   => 'postMessage',
+    ) );
+
+    // add the control for the Header Size
+    $wp_customize->add_control( 'header-size', array(
+	    'label'      => 'Set Desired Header Size',
+	    'section'    => 'header_settings',
+	    'settings'   => 'header-size',
+	    'type'       => 'radio',
+	    'priority'	 => 11,
+	    'choices'    => array(
+	        'header-size-min'   => 'Minimal',
+	        'header-size-full'  => 'Full',
+	) ) );
+
+	// add the setting for the Header Size
+    $wp_customize->add_setting( 'header-type', array(
+        'default' => 'header-type-def',
+        'transport'   => 'postMessage',
+    ) );
+
+    // add the control for the Header Size
+    $wp_customize->add_control( 'header-type', array(
+	    'label'      => 'Show APPIFY Header:',
+	    'section'    => 'header_settings',
+	    'settings'   => 'header-type',
+	    'type'       => 'radio',
+	    'priority'	 => 10,
+	    'choices'    => array(
+	        'header-type-def'   => 'Only on App Pages',
+	        'header-type-app'  => 'Site-wide',
+	) ) );
 
     // Panel 2 Sections B ( Header Colors )
 
@@ -94,11 +130,6 @@ function buddybuildr_customize_register( $wp_customize ) {
 	    'transport'   => 'postMessage',
 	) );
 
-	$wp_customize->add_setting( 'hamburger_color' , array(
-	    'default'     => '#ffffff',
-	    'transport'   => 'postMessage',
-	) );
-
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_background_color', array(
 		'label'        => 'Header Background Color',
 		'section'    => 'header_colors',
@@ -110,13 +141,6 @@ function buddybuildr_customize_register( $wp_customize ) {
 		'section'    => 'header_colors',
 		'settings'   => 'header_color',
 	) ) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hamburger_color', array(
-		'label'        => 'Hamburger Icon Color',
-		'section'    => 'header_colors',
-		'settings'   => 'hamburger_color',
-	) ) );
-
 
     // Section C
 
@@ -131,14 +155,120 @@ function buddybuildr_customize_register( $wp_customize ) {
 
 	// Panel 2 Sections D ( Header Icons )
 
-    // add the section to contain the Header Icon settings
+    
+
+	// Panel 2 Sections E ( Header Button Colors )
+
+	 // Panel 3
+
+	$wp_customize->add_panel( 'appify_header', array(
+	 	'priority'       => 13,
+	 	'capability'     => 'edit_theme_options',
+	 	'theme_supports' => '',
+	 	'title'          => __('Appify Header Options', 'buddy-buildr'),
+	 	'description'    => __('Several settings pertaining to Appify Header', 'buddy-buildr'),
+	) );
+
+	// Panel 3 Sections
+
+	// Panel 3 Sections A
+
+	$wp_customize->add_section( 'appify_header_settings', array(
+	    'priority'       => 10,
+	    'capability'     => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title'          => __('Appify Header General', 'buddy-buildr'),
+	    'description'    =>  __('General settings for the appify header', 'buddy-buildr'),
+	    'panel'  => 'appify_header',
+    ) );
+
+    // add the setting for the Header Search
+    $wp_customize->add_setting( 'appify-header-search', array(
+        'default' => 'app-header-search-on',
+    ) );
+
+    // add the control for the Header Search
+    $wp_customize->add_control( 'header-search', array(
+	    'label'      => 'Show search icon?',
+	    'section'    => 'appify_header_settings',
+	    'settings'   => 'appify-header-search',
+	    'type'       => 'radio',
+	    'priority' => 12,
+	    'choices'    => array(
+	        'appify-header-search-on'   => 'Yes',
+	        'appify-header-search-off'  => 'No',
+	) ) );
+
+	$wp_customize->add_setting( 'appify_sticky_header', array(
+		'default' => false,
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_checkbox',
+	));
+
+	// add the control for the Sticky Header
+	$wp_customize->add_control( 'appify_sticky_header', array(
+        'type' => 'checkbox',
+        'priority' => 11,
+        'section' => 'appify_header_settings',
+        'settings' => 'appify_sticky_header',
+        'label' => esc_html__('Enable sticky Appify header Site-wide.', 'buddy-buildr'),
+    ));
+
+    // Panel 3 Sections B ( Header Colors )
+
+    // add the section to contain the Header Color settings
+	$wp_customize->add_section( 'appify_header_colors' , array(
+		'priority'       => 11,
+	    'capability'     => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title'          => __(' Appify Header Colors', 'buddy-buildr'),
+	    'description'    =>  __('Adjust main header colors for your Application', 'buddy-buildr'),
+	    'panel'  => 'appify_header',
+	) );
+
+	$wp_customize->add_setting( 'appify_header_background_color' , array(
+	    'default'     => '#d44646',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_setting( 'appify_header_color' , array(
+	    'default'     => '#ffffff',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_setting( 'appify_hamburger_color' , array(
+	    'default'     => '#ffffff',
+	    'transport'   => 'postMessage',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'appify_header_background_color', array(
+		'label'        => 'App Header Background Color',
+		'section'    => 'appify_header_colors',
+		'settings'   => 'appify_header_background_color',
+	) ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'appify_header_color', array(
+		'label'        => 'Header Color',
+		'section'    => 'appify_header_colors',
+		'settings'   => 'appify_header_color',
+	) ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'appify_hamburger_color', array(
+		'label'        => 'Hamburger Icon Color',
+		'section'    => 'appify_header_colors',
+		'settings'   => 'appify_hamburger_color',
+	) ) );
+
+	// Panel 3 Sections C ( Header Icons )
+
+	// add the section to contain the Header Icon settings
 	$wp_customize->add_section( 'header_icons' , array(
 		'priority'       => 13,
 	    'capability'     => 'edit_theme_options',
 	    'theme_supports' => '',
-	    'title'          => __('Header Icons', 'buddy-buildr'),
+	    'title'          => __('App Header Icons', 'buddy-buildr'),
 	    'description'    =>  __('Choose header icons and their URLs. Consult theme documentation if unsure.', 'buddy-buildr'),
-	    'panel'  => 'header',
+	    'panel'  => 'appify_header',
 	) );
 
 	// All header icon settings
@@ -231,9 +361,7 @@ function buddybuildr_customize_register( $wp_customize ) {
 		'description' => esc_html__('ICON CLASS: Choose the class name for the third icon. This is the icon that links to Notifications.', 'buddy-buildr'),
 	) );
 
-	// Panel 2 Sections E ( Header Button Colors )
-
-	// Panel 3
+	// Panel 4
 
 	$wp_customize->add_panel( 'buddypress_options', array(
 	 	'priority'       => 14,
@@ -243,9 +371,9 @@ function buddybuildr_customize_register( $wp_customize ) {
 	 	'description'    => __('Several settings pertaining to BuddyPress in Buddy Buildr theme', 'buddy-buildr'),
 	) );
 
-	// Panel 3 Sections
+	// Panel 4 Sections
 
-	// Panel 3 Sections A
+	// Panel 4 Sections A
 
 	$wp_customize->add_section( 'buddypress_general', array(
 	    'priority'       => 10,
@@ -514,10 +642,17 @@ add_action( 'wp_head', 'mkpd_customizer_css');
 function mkpd_customizer_css() {
     ?>
          <style type="text/css">
-             .header-wrapper {background-color: <?php echo get_theme_mod('header_background_color', '#d44646'); ?>;}
-			 .hamburger div {background-color:<?php echo get_theme_mod('hamburger_color', '#ffffff'); ?>;}
-			 .site-header-item {color:<?php echo get_theme_mod('header_color', '#ffffff'); ?>;}
-			 .site-header-item a {color:<?php echo get_theme_mod('header_color', '#ffffff'); ?>;}
+             #Amasthead .site-header-app {background-color: <?php echo get_theme_mod('appify_header_background_color', '#d44646'); ?>;}
+             #Dmasthead .site-header-main {background-color: <?php echo get_theme_mod('header_background_color', '#d44646'); ?>;}
+			 #Amasthead .hamburger div {background-color:<?php echo get_theme_mod('appify_hamburger_color', '#ffffff'); ?>;}
+			 #Dmasthead .hamburger div {background-color:<?php echo get_theme_mod('header_color', '#ffffff'); ?>;}
+			 #Dmasthead .site-header-item {color:<?php echo get_theme_mod('header_color', '#ffffff'); ?>;}
+			 #Amasthead .site-header-app .site-header-item {color:<?php echo get_theme_mod('appify_header_color', '#ffffff'); ?>;}
+			 .site-header-main .site-header-item a {color:<?php echo get_theme_mod('header_color', '#ffffff'); ?>;}
+			 #Amasthead .site-header-app .site-header-item a {color:<?php echo get_theme_mod('appify_header_color', '#ffffff'); ?>;}
+			 #Amasthead .site-header-common + .header-site-search {background-color: <?php echo get_theme_mod('appify_header_background_color', '#d44646'); ?>;}
+			 #Dmasthead .site-header-common + .header-site-search {background-color: <?php echo get_theme_mod('header_background_color', '#d44646'); ?>;}
+			 .site-header-app .main-navigation a {color:<?php echo get_theme_mod('appify_header_color', '#ffffff'); ?>;}
 			 .header-search-on #SearchIcon {display: inline-block;}
 			 .header-search-off #SearchIcon {display: none;}
 			 .header-search-on .side-search {display: block;}

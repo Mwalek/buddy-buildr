@@ -6,9 +6,13 @@
  * @package Buddy_Buildr
  */
 
-get_header(); ?>
+buddybuildr_header_switcher(); ?>
 
 		<div id="primary" class="content-area">
+			<?php
+// action hook for any content placed before the content, including the widget area
+do_action ( 'buddybuildr_before_content' );
+?>
 			<main id="main" class="site-main">
 
 			<?php
@@ -26,6 +30,10 @@ get_header(); ?>
 			?>
 
 			</main><!-- #main -->
+			<?php
+// action hook for any content placed after the content, including the widget area
+do_action ( 'buddybuildr_after_content' );
+?>
 		</div><!-- #primary -->
 
 <?php

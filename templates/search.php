@@ -4,7 +4,7 @@
 Template Name: Search
 */
 
-get_header(); ?>
+buddybuildr_header_switcher(); ?>
 
 <?php if ( has_post_thumbnail() ) {
 	$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );

@@ -7,14 +7,19 @@
  </head>
   
 <body <?php body_class( array( "databoypro", "buddybuildr", "m5", "m5tfw" ) ); ?>>
+<?php
+// action hook for any content placed before the header, including the widget area
+do_action ( 'buddybuildr_before_header' );
+?>
+	<div class="bb-pre-icon"></div>
 
 <div id="Overlay" class="body_overlay"></div>
  
 	<div id="page" class="site grid-container">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'buddy-buildr' ); ?></a>
-		<header id="masthead" class="site-header">
+		<header id="Amasthead" class="site-header">
 					 
-			<div class="header-wrapper m5-nav m5-nav-wrapper">
+			<div class="site-header-app site-header-common header-wrapper m5-nav m5-nav-wrapper">
 
 				<div class="header-left header-section">
 
@@ -38,6 +43,10 @@
 				</div><!-- .header-left -->
 
 				<div id="header-right" class="header-right header-section">
+					<?php
+    // action hook for any content placed after the site branding container in the header, including the widget area.
+    do_action ( 'buddybuildr_in_header' );
+    ?>
 					<div class="header-social-area">
 
 				<div class="social-area-icons site-header-item">

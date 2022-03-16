@@ -13,7 +13,7 @@
  * @subpackage Buddy_Buildr
  */
 
-get_header(); ?>
+buddybuildr_header_switcher(); ?>
 
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">

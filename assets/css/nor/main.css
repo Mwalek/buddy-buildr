@@ -274,8 +274,8 @@ big {
 ==================================*/
 
 .buddybuildr .fa {
-	font: normal 900 14px 'Font Awesome\ 5 Free';
-	font-family: 'Font Awesome\ 5 Free';
+	font: normal 900 14px 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 5 Free';
 }
 
 hr {
@@ -1066,7 +1066,7 @@ main img.attachment-post-thumbnail {
 }
 
 .rsidenav a:before , #my_community_header h3:before {
-	font-family: 'Font Awesome\ 5 Free';
+	font-family: 'Font Awesome 5 Free';
 }
 
 .notifications_container > li {
@@ -1174,7 +1174,7 @@ form::after {
 }
 
 .search-wrap:before {
-    font-family: 'Font Awesome\ 5 Free';
+    font-family: 'Font Awesome 5 Free';
     color:#ccc;
     position: absolute;
     left: 10px;
@@ -1539,21 +1539,21 @@ body.buddypress .grid-container {
 }*/
 
 .pagination .prev::before {
-	font-family: 'Font Awesome\ 5 Free';
+	font-family: 'Font Awesome 5 Free';
     content: "\f060";
     right: -1px;
     top: -1px;
 }
 
 .pagination .next::before {
-	font-family: 'Font Awesome\ 5 Free';
+	font-family: 'Font Awesome 5 Free';
     content: "\f061";
     right: -1px;
     top: -1px;
 }
 
 .pagination .prev::before, .pagination .next::before {
-	font-family: 'Font Awesome\ 5 Free';
+	font-family: 'Font Awesome 5 Free';
     font-size: 20px;
     line-height: 38px;
     position: relative;
@@ -1634,7 +1634,7 @@ main figure, main img {
 /* New Widget Code 
 
 .widget.widget_recent_entries .widget-title:before {
-	font-family: 'Font Awesome\ 5 Free';
+	font-family: 'Font Awesome 5 Free';
     left: 10px;
 	top: 5px;
     content: "\f519";
@@ -1643,7 +1643,7 @@ main figure, main img {
 }
 
 .widget.widget_recent_entries a:before {
-	font-family: 'Font Awesome\ 5 Free';
+	font-family: 'Font Awesome 5 Free';
     left: 10px;
 	top: 5px;
     content: "\f5d2";
@@ -2095,7 +2095,7 @@ input[type="search"] {
 }
 
 #bb_home_search_container .also {
-  font-family:'Font Awesome\ 5 Free';
+  font-family:'Font Awesome 5 Free';
   font-weight: 900;
   color:#bbb;
   display:inline-block;
@@ -2381,11 +2381,11 @@ li.menu-item-has-children > a {
 	margin-top: 10px;
 }
 
-.sidenav ul.sub-menu a {
+.menu ul.sub-menu a {
 	text-indent: 25px;
 }
 
-.sidenav ul.sub-menu ul a {
+.menu ul.sub-menu ul a {
 	text-indent: 50px;
 }
 

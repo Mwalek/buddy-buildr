@@ -1,20 +1,38 @@
 ( function( $ ) {
 
+	wp.customize( 'appify_header_background_color', function( value ) {
+		value.bind( function( newval ) {
+			$( '.site-header-app' ).css( 'background-color', newval );
+		} );
+	} );
+	
+	wp.customize( 'appify_header_color', function( value ) {
+		value.bind( function( newval ) {
+			$( '.site-header-app a' ).css( 'color', newval );
+		} );
+	} );
+
+	wp.customize( 'appify_hamburger_color', function( value ) {
+		value.bind( function( newval ) {
+			$( '.hamburger div' ).css( 'background-color', newval );
+		} );
+	} );
+
     wp.customize( 'header_background_color', function( value ) {
 		value.bind( function( newval ) {
-			$( '.header-wrapper' ).css( 'background-color', newval );
+			$( '.site-header-main' ).css( 'background-color', newval );
 		} );
 	} );
 	
 	wp.customize( 'header_color', function( value ) {
 		value.bind( function( newval ) {
-			$( '.site-header-item' ).css( 'color', newval );
+			$( '.site-header-main .site-header-item' ).css( 'color', newval );
 		} );
 	} );
 
 	wp.customize( 'header_color', function( value ) {
 		value.bind( function( newval ) {
-			$( '.site-header-item a' ).css( 'color', newval );
+			$( '.site-header-main .site-header-item a' ).css( 'color', newval );
 		} );
 	} );
 	
@@ -103,6 +121,28 @@
 			$( '.page-template .bb_home_search_container' ).css( 'padding', newval );
 		} );
 	} );
+
+
+	// HEADER SIZE
+
+	/*// Update the default header size in real time...
+	wp.customize( 'header_size', function( value ) {
+		value.bind( function( newval ) {
+			$( '.site-header-main' ).css( 'height', newval +'px' );
+		} );
+	} );*/
+
+	// Header text color.
+    wp.customize( 'header-size', function( value ) {
+        value.bind( function( to ) {
+            if ( 'header-size-min' === to ) {
+                $( '#Dmasthead' ).removeClass('full-header').addClass( 'min-header' );
+            } else {
+            	$( '#Dmasthead' ).removeClass('min-header').addClass( 'full-header' );
+
+            }
+        } );
+    } );
 
 
 	

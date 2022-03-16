@@ -86,6 +86,18 @@ function RightNav() {
 
 /* end of Rsidenav */
 
+// Wait for window load
+window.onload = function() {
+  
+  jQuery(document).ready(function( $ ) {  
+    	
+    	// Animate loader off screen
+        $(".bb-pre-icon").fadeOut("slow");;
+    
+    });
+
+};
+
 /* Beginning of Sticky Header */
 
 jQuery(document).ready(function( $ ) {  
@@ -157,12 +169,25 @@ function controlSearch() {
 
 /* Sub menu hide */
 jQuery(document).ready(function( $ ) {  
-    $( "<span class='submenu-button'><i class='fas fa-angle-down'></i></span>" ).insertAfter( ".menu-item-has-children>a" );
-    $(".menu-item-has-children ul").hide();
+    $( "<span class='submenu-button'><i class='fas fa-angle-down'></i></span>" ).insertAfter( ".app .menu-item-has-children>a" );
+    $(".app .menu-item-has-children ul").hide();
     $(".submenu-button").click(function() {
       $(this).next("ul").toggle();
     });
 });
+
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function mobileMenu() {
+  var x = document.getElementById("site-navigation");
+  var y = document.getElementById("Dmasthead");
+  if (x.className === "main-navigation") {
+    x.className += " responsive";
+    y.className += " responsive";
+  } else {
+    x.className = "main-navigation";
+    y.className = "site-header";
+  }
+} 
 
 /* Notifications */
 
@@ -193,6 +218,21 @@ function NotificationsNav() {
     	xb.style.display = "block";
     }
 	
+}
+
+function NotificationsNav2() {
+    var x = document.getElementById("Rsidenav");
+    var y = document.getElementById("page");
+    if (x.style.width == "250px") {
+        x.style.width = "0";
+        x.className = "sidenav rsidenav";
+        y.style.marginRight = "0";
+    } else {
+        x.style.width = "250px";
+        x.className += " jackrabbit";
+        y.style.marginRight = "250px";
+    }
+    
 }
 
 /* end of Notifications */
@@ -307,12 +347,23 @@ function openSidebar(evt, sidebarName) {
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(sidebarName).style.display = "block";
-    evt.currentTarget.className += " active";
+   /* evt.currentTarget.className += " active";*/
 } 
 
 jQuery(document).ready(function( $ ) {  
 
     $("#defaultsidebarOpen").click();
+
+    $('.toggle-header-search').on('click', function(){
+        $('.site-header-common').toggleClass('hide-common');
+        $('.header-site-search').toggleClass('show-search');
+        //$(".search-field").focus();
+        $('.site-header').toggleClass('hideoverflow');
+        $('.site-header').addClass('hideoverflow2');
+        setTimeout(function () {
+            $('.site-header').removeClass('hideoverflow2');
+        }, 2000);
+    })
   
 });
 
@@ -338,6 +389,8 @@ jQuery(document).ready(function( $ ) {
     $("#search").focus();
 
 });
+
+
 
 
 

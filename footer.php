@@ -1,6 +1,10 @@
 
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<?php
+// action hook for any content placed before the content, including the widget area
+do_action ( 'buddybuildr_footer' );
+?>
 		<div class="footer-nav-container">
 			<nav id="footer-navigation" class="footer-navigation" role="navigation">
 			<?php
@@ -22,6 +26,10 @@
 			</p>
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer -->	
+	<?php
+// action hook for any content placed before the content, including the widget area
+do_action ( 'buddybuildr_after_footer' );
+?>
 </div><!-- .site -->
 
 

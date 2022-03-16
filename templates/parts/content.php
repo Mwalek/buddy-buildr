@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package M5_TFW
+ * @package Buddy_Buildr
  */
 
 ?>

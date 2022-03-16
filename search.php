@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  * @package WordPress
- * @subpackage Buddy_BUildr
+ * @subpackage Buddy_Buildr
  */
 
 get_header(); ?>
