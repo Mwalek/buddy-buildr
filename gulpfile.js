@@ -28,9 +28,9 @@ function style() {
 }
 
 function import_styles(done){
-    gulp.src('dist/style.css')
+    gulp.src('assets/css/style.css')
         .pipe(cssimport([]))
-        .pipe(gulp.dest('./fontawesome'));
+        .pipe(gulp.dest('./'));
 		done();
 }
 

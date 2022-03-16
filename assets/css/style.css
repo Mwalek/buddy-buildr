@@ -1,0 +1,23 @@
+/*   
+Theme Name: Buddy Buildr
+Theme URI: https://mwale.me/
+Description: Buddy Buildr is a beautiful theme created for modern membership websites and web apps. It is a unique design based on simplicity and comes with special support for Buddypress.
+Author: Mwale Kalenga
+Author URI: https://mwale.me/
+Version: 0.2.0.7
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: simple, featured-images, buddypress, membership, translation-ready, full-width-template, left-sidebar
+*/
+
+/* Table of Contents:
+	1.0 Reset Styles
+	2.0 Baseline (Default) Styles
+	3.0 Column Structure
+	4.0 Main Column (articles, etc)
+	5.0 Comments and Pingbacks
+	6.0 Sidebar lists and Ads
+	7.0 Footer 
+*/
+
+@import '../../dist/style.css';
