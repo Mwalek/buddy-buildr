@@ -2696,3 +2696,7 @@ border-radius: 9px;
 		height: 90px;
 	}
 }
+
+.author-text {
+	color:red !important;
+}
