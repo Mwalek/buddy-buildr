@@ -8,8 +8,11 @@ var cssimport = require('gulp-cssimport');
 
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
+const sass = require('gulp-sass')(require('sass'));
 
 var styleWatch = 'src/*.css';
+var cssAssetWatch = 'assets/css/style.css';
+var sassWatch = 'sass/*.scss';
 
 function style() {
 	var processors = [
@@ -34,28 +37,21 @@ function import_styles(done){
 		done();
 }
 
-
-gulp.task('default', gulp.series(style, import_styles));
+function compile_sass(done){
+    gulp.src('sass/*.scss')
+		.pipe( sourcemaps.init() )
+        .pipe(sass())
+		.pipe( sourcemaps.write('./') )
+        .pipe(gulp.dest('./css'));
+		done();
+}
 
 function watch_files() {
 	gulp.watch( styleWatch , style );
-	gulp.watch( styleWatch , import_styles );
+	gulp.watch( cssAssetWatch , import_styles );
+	gulp.watch( sassWatch , compile_sass );
 }
 
-gulp.task( "watch", watch_files );
-
-/*gulp.task('watch', function() {
-    //gulp.watch('*.scss', ['sass']);
-	gulp.watch( styleWatch , ['style']);
-	gulp.watch( styleWatch , ['import'])
-})
-
-gulp.task('default', function(done) { // <--- Insert `done` as a parameter here...
-    gulp.series('style','import', 'watch')
-    done(); // <--- ...and call it here.
-})*/
-
-/*gulp.task('watch', gulp.series('default', function() {
-	gulp.watch( styleWatch , ['style']);
-	gulp.watch( styleWatch , ['import']);
-}));*/
+gulp.task('default', gulp.series(style, import_styles, compile_sass));
+gulp.task( 'sass', compile_sass );
+gulp.task( 'watch', watch_files );
