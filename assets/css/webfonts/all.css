@@ -4193,6 +4193,7 @@ readers do not read off random characters that represent icons */
   width: auto; }
 @font-face {
   font-family: 'Font Awesome 5 Brands';
+  font-display: swap;
   font-style: normal;
   font-weight: normal;
   src: url("../webfonts/fa-brands-400.eot");
