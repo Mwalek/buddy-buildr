@@ -84,3 +84,8 @@ Rails
 
 # VSCode Workspace Settings #
 .vscode
+
+# Lighthouse Reports #
+##########
+/reports/
+*report*
