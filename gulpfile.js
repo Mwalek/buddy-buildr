@@ -12,7 +12,7 @@ const sass = require('gulp-sass')(require('sass'));
 
 var styleWatch = 'src/*.css';
 var cssAssetWatch = 'assets/css/style.css';
-var sassWatch = 'sass/*.scss';
+var sassWatch = 'sass/**/*.scss';
 
 function style() {
 	var processors = [
