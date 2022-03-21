@@ -32,7 +32,9 @@ function style() {
 
 function import_styles(done){
     gulp.src('assets/css/style.css')
+		.pipe( sourcemaps.init() )
         .pipe(cssimport([]))
+		.pipe( sourcemaps.write('./') )
         .pipe(gulp.dest('./'));
 		done();
 }
