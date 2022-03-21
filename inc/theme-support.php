@@ -1139,7 +1139,7 @@ add_action( 'login_head', 'wpdps_default_site_icon', 99 );
 function wpdps_default_site_icon()
 {
     if ( ! has_site_icon()  && ! is_customize_preview() ) {
-		$default_icon_url = get_template_directory_uri() . '/assets/favicon.ico';
+		$default_icon_url = get_template_directory_uri() . '/assets/images/favicon.ico';
     	echo '<link rel="icon" type="image/x-icon" href="' . $default_icon_url .'">';
     }
 } 
