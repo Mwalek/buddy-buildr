@@ -823,7 +823,6 @@ a:hover, a:focus {
   color: inherit;
 }
 .site-header-main .hamburger {
-  display: inline-block;
   float: left;
   padding: 9px 10px 10px 10px;
   cursor: pointer;

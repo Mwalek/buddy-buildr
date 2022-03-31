@@ -125,7 +125,7 @@ a { color: $primary-color; @include animate( color, 320ms );
 		a { border-radius: 50%; width: 40px; height: 40px;}
 		label { padding: 10px; display: inline-block; cursor: pointer; color: inherit; }
 	}
-	.hamburger {display: inline-block; float: left; padding: 9px 10px 10px 10px; cursor: pointer; margin: 0;
+	.hamburger { float: left; padding: 9px 10px 10px 10px; cursor: pointer; margin: 0;
 		&:hover,
 		&:focus { border-radius: 30%; background-color: $hover-color;}
 	}
