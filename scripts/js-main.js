@@ -363,7 +363,10 @@ jQuery(document).ready(function( $ ) {
         setTimeout(function () {
             $('.site-header').removeClass('hideoverflow2');
         }, 2000);
-    })
+    });
+
+    // Position cursor in searchbox on Search Template
+    $("#search").focus();
   
 });
 
@@ -380,15 +383,6 @@ jQuery(document).ready(function( $ ) {
         }
   
 });*/
-
-
-// Position cursor in searchbox on Search Template
-
-jQuery(document).ready(function( $ ) {  
-
-    $("#search").focus();
-
-});
 
 
 
