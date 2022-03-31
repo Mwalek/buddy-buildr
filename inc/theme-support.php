@@ -1133,13 +1133,28 @@ function app_save_meta_box_data( $post_id ){
 }
 add_action( 'save_post', 'app_save_meta_box_data' );
 
-add_action( 'wp_head',    'wpdps_default_site_icon', 99 );
-add_action( 'login_head', 'wpdps_default_site_icon', 99 );
+/*add_action( 'wp_head',    'wpdps_default_site_icon', 99 );
+add_action( 'login_head', 'wpdps_default_site_icon', 99 );*/
+// add_action( array(), 'wpdps_default_site_icon', 99 );
 
-function wpdps_default_site_icon()
-{
+/**
+ * If you have a callback you want to run on multiple actions, pass them here.
+ *
+ * @param array $tags
+ * @param callable $function_to_add
+ * @param int $priority
+ * @param int $accepted_args
+ */
+
+function add_multiple_actions( array $tags, $function_to_add, $priority = 10, $accepted_args = 1 ) {
+	foreach ( $tags as $tag ) {
+			add_action( $tag, $function_to_add, $priority, $accepted_args );
+	}
+}
+
+add_multiple_actions( [ 'wp_head', 'login_head', 'admin_head' ], function () {
     if ( ! has_site_icon()  && ! is_customize_preview() ) {
 		$default_icon_url = get_template_directory_uri() . '/assets/images/favicon.ico';
     	echo '<link rel="icon" type="image/x-icon" href="' . $default_icon_url .'">';
     }
-} 
+});
