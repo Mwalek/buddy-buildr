@@ -892,11 +892,11 @@ main img.attachment-post-thumbnail {
 =            9.0 MEDIA QUERIES            =
 ==================================*/
 
-@media only screen and (min-width:375px) {
+/*@media only screen and (min-width:375px) {
 	.site-header h3 {
 
 	}
-}
+}*/
 
 @media only screen and (min-width:450px) {
 	.username {
@@ -1376,11 +1376,9 @@ body.buddypress .grid-container {
 =        13.0 SECONDARY (SIDEBAR)       =
 ==================================*/
 
-.secondary-container {
+/*.secondary-container {
 
-}
-
-
+}*/
 
 .widget, .secondary-container .widget {
 	margin-bottom: 0;
@@ -1974,9 +1972,9 @@ body.buddybuildr.buddypress article.page > .entry-header {
 	background-color: #929598;
 }
 
-.page-template .bb_home_search_container {
+/*.page-template .bb_home_search_container {
 
-}
+}*/
 
 .home-sc {
 	overflow: hidden;
@@ -2460,9 +2458,9 @@ border-radius: 9px;
   to   { visibility: visible; }
 }*/
 
-.widget.widget_nav_menu {
+/*.widget.widget_nav_menu {
 
-}
+}*/
 
 .widget.widget_nav_menu .submenu-button {
 	padding: 0;
