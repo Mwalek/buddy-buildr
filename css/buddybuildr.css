@@ -1346,6 +1346,9 @@ a:hover, a:focus {
   #Dmasthead {
     height: 90px;
   }
+  #Dmasthead .site-header-item {
+    text-align: right;
+  }
 }
 @media only screen and (min-width: 350px) {
   .site-branding .site-title a {

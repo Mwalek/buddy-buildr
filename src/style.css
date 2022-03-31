@@ -2519,7 +2519,7 @@ border-radius: 9px;
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
+	/*float: left;*/
 	width: 100%;
 }
 
