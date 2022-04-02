@@ -168,7 +168,7 @@ a { color: $primary-color; @include animate( color, 320ms );
 }
 
 .header-site-search.transition-left {
-	top: -60px;
+	/*top: -60px;*/
 	height: 60px;
 }
 
@@ -533,7 +533,7 @@ a { color: $primary-color; @include animate( color, 320ms );
 	.buddybuildr .main-navigation li:hover > .sub-menu {overflow: visible; display: block;}
 
 	.header-site-search.transition-left {
-		top: -60px;
+		/*top: -60px;*/
 		padding: 10px;
 		height: 60px;
 	}

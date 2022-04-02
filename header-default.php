@@ -58,6 +58,6 @@ do_action ( 'buddybuildr_before_header' );
 				<span class="search_prefix">Search </span><?php echo get_bloginfo( 'name' ); ?>
 			</p> -->
 				<div class="header-site-search-box"><?php get_search_form(); ?></div>
-				<span class="buddybuildr-icon buddybuildr-close toggle-header-search site-header-item"></span>
+				<span class="buddybuildr-icon buddybuildr-close toggle-header-search site-header-item close-header-search"></span>
 		</div><!-- .site-search -->
 	</header><!-- #masthead -->

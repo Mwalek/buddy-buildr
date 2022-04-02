@@ -890,7 +890,7 @@ a:hover, a:focus {
 }
 
 .header-site-search.transition-left {
-  top: -60px;
+  /*top: -60px;*/
   height: 60px;
 }
 
@@ -1337,7 +1337,7 @@ a:hover, a:focus {
   }
 
   .header-site-search.transition-left {
-    top: -60px;
+    /*top: -60px;*/
     padding: 10px;
     height: 60px;
   }

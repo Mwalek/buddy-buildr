@@ -355,14 +355,17 @@ jQuery(document).ready(function( $ ) {
     $("#defaultsidebarOpen").click();
 
     $('.toggle-header-search').on('click', function(){
-        $('.site-header-common').toggleClass('hide-common');
-        $('.header-site-search').toggleClass('show-search');
-        //$(".search-field").focus();
-        $('.site-header').toggleClass('hideoverflow');
-        $('.site-header').addClass('hideoverflow2');
+        //$('.site-header-common').toggleClass('hide-common');
+        //$(".site-header-common").css({ top: '-100%' });
+        //$('.header-site-search').toggleClass('show-search');
+        $(".search-field").focus();
+        //$('.site-header').toggleClass('hideoverflow');
+        /*$('.site-header').addClass('hideoverflow2');
         setTimeout(function () {
             $('.site-header').removeClass('hideoverflow2');
-        }, 2000);
+        }, 2000);*/
+        var defHeaderTop = document.getElementsByClassName("site-header-common")[0].style.top;
+        //console.log("The number is" + defHeaderTop);
     });
 
     // Position cursor in searchbox on Search Template
@@ -384,7 +387,37 @@ jQuery(document).ready(function( $ ) {
   
 });*/
 
+var defHeaderTop = document.getElementsByClassName("site-header-common")[0];
+var searchHeader = document.getElementsByClassName("header-site-search")[0];
 
+const defaultSearch = {
+    isOpen: false,
+    open: function() {
+        if ( defaultSearch.isOpen === false ) { 
+            defHeaderTop.style.top = "-100%";
+            searchHeader.style.top = "-100%";
+            defHeaderTop.style.left = "0";
+            searchHeader.classList.add("show-search");
+            console.log("You have opened the search!");
+            defaultSearch.isOpen = true;
+            return "You have opened the search!";
+        }
+    },
+    close: function() {
+        if ( defaultSearch.isOpen === true ) { 
+            defHeaderTop.style.top = "0";
+            searchHeader.style.top = "0";
+            defHeaderTop.style.left = "";
+            searchHeader.classList.remove("show-search"); 
+            console.log("The search has been closed!");
+            defaultSearch.isOpen = false;
+            return "Search now closed!";
+        }
+    }
+}
+
+document.getElementsByClassName("header-search-icon")[0].addEventListener("click", defaultSearch.open);
+document.getElementsByClassName("close-header-search")[0].addEventListener("click", defaultSearch.close);
 
 
 

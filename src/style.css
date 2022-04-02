@@ -2588,7 +2588,7 @@ border-radius: 9px;
 /* Fix sub menu */
 
 .site-header {
-	overflow: unset;
+	overflow: clip;
 }
 
 /* sub ul ul {
@@ -2607,21 +2607,13 @@ border-radius: 9px;
 
 .transition-right{
     
-  -webkit-transition: right 2s ease-out;  /* Chrome 1-25, Safari 3.2+ */
-     -moz-transition: right 2s ease-out;  /* Firefox 4-15 */
-       -o-transition: right 2s ease-out;  /* Opera 10.50–12.00 */
-          transition: right 2s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
-          animation: overflowhidden 2s 1;
+    transition: top 1.5s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
 
 }
 
 .transition-left{
     
-  -webkit-transition: left 2s ease-out;  /* Chrome 1-25, Safari 3.2+ */
-     -moz-transition: left 2s ease-out;  /* Firefox 4-15 */
-       -o-transition: left 2s ease-out;  /* Opera 10.50–12.00 */
-          transition: left 2s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
-          animation: overflowhidden 2s 1;
+    transition: top 1.5s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
 
 }
 
@@ -2638,19 +2630,22 @@ border-radius: 9px;
 .site-header-common {
 	right: 0px;
 	display: block;
+	top: 0;
 }
 
 .hide-common {
     right: -100% !important;
+	top: -100%;
     /* display: none !important; */
 }
 
 .header-site-search {
 	/* display: none; */
-	left: -100%;
+	/*left: -100%;*/
 }
 
 .show-search {
+	top: 0;
     left:0px !important;
     display: block !important;   
 }

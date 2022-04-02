@@ -594,10 +594,13 @@ function exterior_header_size() {
 					padding: 10px;
 				}
 				header#Dmasthead {height: 60px;}
-				#Dmasthead .header-site-search.transition-left {
-					top: -60px;
+				#Dmasthead .header-site-search {
+					top: 0;
 					padding: 10px;
 					height: 60px;
+				}
+				#Dmasthead .header-site-search.show-search {
+					top: -60px;
 				}
 			</style>
 		<?php
