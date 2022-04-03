@@ -88,13 +88,11 @@ function RightNav() {
 
 // Wait for window load
 window.onload = function() {
-  
-  jQuery(document).ready(function( $ ) {  
-    	
-    	// Animate loader off screen
-        $(".bb-pre-icon").fadeOut("slow");;
-    
-    });
+
+    const preload = document.getElementsByClassName("bb-pre-icon")[0];
+
+    preload.style.opacity = '0';
+    preload.remove();
 
 };
 

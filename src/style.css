@@ -2445,6 +2445,7 @@ border-radius: 9px;
 	height: 100%;
 	z-index: 9999;
 	background: url(images/103.gif) center no-repeat #fff;
+	transition: opacity 400ms;
 }
 
 
