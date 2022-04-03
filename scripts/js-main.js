@@ -102,7 +102,7 @@ window.onload = function() {
 
 jQuery(document).ready(function( $ ) {  
 
-    $(window).scroll(function(){
+    $(window).trigger("scroll", function(){
         if ($(window).scrollTop() >= 60) {
             $('#masthead').addClass('fixed-header');
             $('.sticky-header #page').addClass('page-has-sticky');
@@ -171,7 +171,7 @@ function controlSearch() {
 jQuery(document).ready(function( $ ) {  
     $( "<span class='submenu-button'><i class='fas fa-angle-down'></i></span>" ).insertAfter( ".app .menu-item-has-children>a" );
     $(".app .menu-item-has-children ul").hide();
-    $(".submenu-button").click(function() {
+    $(".submenu-button").on("click", function() {
       $(this).next("ul").toggle();
     });
 });
@@ -267,7 +267,7 @@ window.onclick = function(event) {
 
 jQuery(document).ready(function( $ ) {	
 
-	$('.toggle-header-right').click(function(){
+	$('.toggle-header-right').on("click", function(){
 	   $('#header-right').toggle('slow');
        $('.toggle-header-right .alert_count').toggle('slow');
 	});
@@ -303,14 +303,14 @@ jQuery(document).ready(function( $ ) {
             searchBox.focus();
         }   
     });
-    searchBox.keypress(function(e) {
+    searchBox.on( "keypress", function(e) {
         if(e.which === 13) {
             boxContainer.toggleState(false);
             isOpen = false;
             handleRequest();
         }
     });
-    searchBox.blur(function() {
+    searchBox.on( "blur", function() {
         boxContainer.toggleState(false);
         isOpen = false;
     });
@@ -352,13 +352,13 @@ function openSidebar(evt, sidebarName) {
 
 jQuery(document).ready(function( $ ) {  
 
-    $("#defaultsidebarOpen").click();
+    //$("#defaultsidebarOpen").on("click", "");
 
     $('.toggle-header-search').on('click', function(){
         //$('.site-header-common').toggleClass('hide-common');
         //$(".site-header-common").css({ top: '-100%' });
         //$('.header-site-search').toggleClass('show-search');
-        $(".search-field").focus();
+        $(".search-field").trigger( "focus" );
         //$('.site-header').toggleClass('hideoverflow');
         /*$('.site-header').addClass('hideoverflow2');
         setTimeout(function () {
@@ -369,7 +369,7 @@ jQuery(document).ready(function( $ ) {
     });
 
     // Position cursor in searchbox on Search Template
-    $("#search").focus();
+    $("#search").trigger( "focus" );
   
 });
 
@@ -418,6 +418,4 @@ const defaultSearch = {
 
 document.getElementsByClassName("header-search-icon")[0].addEventListener("click", defaultSearch.open);
 document.getElementsByClassName("close-header-search")[0].addEventListener("click", defaultSearch.close);
-
-
 
