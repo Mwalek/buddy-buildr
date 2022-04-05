@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html <?php language_attributes() ?> >
+
 <head>
-	<meta name="viewport" http-equiv="Content-Type" content="width=device-width, initial-scale=1, <?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-	
-	 <?php wp_head(); ?>
- </head>
-  
-<body <?php body_class( array( "databoypro", "buddybuildr", "m5", "m5tfw" ) ); ?>>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<?php wp_head(); ?>
+</head>
+
+<body <?php body_class( array( "buddybuildr", "m5", "m5tfw" ) ); ?>>
+
 <?php
-// action hook for any content placed before the header, including the widget area
+# action hook for any content placed before the header, including the widget area
 do_action ( 'buddybuildr_before_header' );
 ?>
-	<div class="bb-pre-icon"></div>
+
+<div class="bb-pre-icon"></div>
 
 <div id="Overlay" class="body_overlay"></div>
  
