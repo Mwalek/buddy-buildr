@@ -322,7 +322,7 @@ del {
 	font-family: "Roboto", sans-serif;
 }
 
-.buddybuildr button, .buddybuildr input[type="button"], .buddybuildr input[type="reset"], .buddybuildr input[type="submit"] {
+.buddybuildr button:not(.styless-button), .buddybuildr input[type="button"], .buddybuildr input[type="reset"], .buddybuildr input[type="submit"] {
     display: inline-block;
 	padding: 16px 26px;
 	margin-bottom: 0;
@@ -345,18 +345,6 @@ del {
 	background: #4B555F;
 	border: none;
 	color: #fff;
-}
-
-.buddybuildr button, .buddybuildr .button {
-	min-width: 160px;
-}
-
-button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover{
-    text-decoration: none;
-    color: #fff;
-    border-color: #adadad;
-    cursor: pointer;
-    opacity: 0.9;
 }
 
 .buddybuildr .fa:before {

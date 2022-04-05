@@ -572,11 +572,11 @@ input[type=submit], .buddybuildr .bb_button {
   color: #fff;
 }
 
-button, .button {
+.buddybuildr button:not(.styless-button), .buddybuildr .button {
   min-width: 160px;
 }
 
-button:hover, input[type=button]:hover, input[type=reset]:hover, input[type=submit]:hover, .bb_button:hover {
+button:not(.styless-button):hover, input[type=button]:hover, input[type=reset]:hover, input[type=submit]:hover, .bb_button:hover {
   text-decoration: none;
   color: #fff;
   border-color: #adadad;
