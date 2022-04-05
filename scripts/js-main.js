@@ -147,23 +147,23 @@ function controlSearch() {
     
 }
 
-/* Lsidenav */
+/* lSidenav */
 
  function LeftNav() {
-	var x = document.getElementById("Lsidenav");
+	var x = document.getElementById("lSidenav");
 	if (x.style.width == "40%" || x.style.width == "300px") {
-        document.getElementById("Lsidenav").style.width = "0";
+        document.getElementById("lSidenav").style.width = "0";
 		document.getElementById("Overlay").style.backgroundColor = "transparent";
 		document.getElementById("Overlay").style.width = "0";
     } else {
-        document.getElementById("Lsidenav").style.width = "300px";
+        document.getElementById("lSidenav").style.width = "300px";
 		document.getElementById("Overlay").style.backgroundColor = "rgba(0,0,0,0.4)";
 		document.getElementById("Overlay").style.width = "100%";
     }
 	
 }
 
-/* end of Lsidenav */
+/* end of lSidenav */
 
 /* Sub menu hide */
 jQuery(document).ready(function( $ ) {  

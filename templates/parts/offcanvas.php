@@ -2,12 +2,12 @@
 
 ?>
 
-<div id="Lsidenav" class="sidenav lsidenav  rabbitjack">
+<div id="lSidenav" class="sidenav lsidenav  rabbitjack">
   <button onclick="LeftNav()" class="styless-button offcanvas-close">Close Menu</button>
   <nav id="mobile-navigation" class="main-mobile-navigation" role="navigation">
     <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
   </nav>
-</div><!-- #Lsidenav -->
+</div><!-- #lSidenav -->
 
 <div id="Rsidenav" class="sidenav rsidenav">
 
