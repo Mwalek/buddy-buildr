@@ -1,8 +1,7 @@
- button, input[type="button"], input[type="reset"], 
+ button:not(.styless-button), input[type="button"], input[type="reset"], 
  input[type="submit"], .buddybuildr .bb_button {
     display: inline-block;
     padding: 8px 13px;
-	/*padding: 16px 26px;*/
 	margin-bottom: 0;
 	font-size: 18px;
 	font-weight: 400;
