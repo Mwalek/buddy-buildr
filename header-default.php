@@ -46,7 +46,7 @@ do_action ( 'buddybuildr_before_header' );
 					<?php wp_nav_menu( array( 'theme_location' => 'main', 'menu_id' => 'primary-menu', ) ); ?>
 				</nav><!-- #site-navigation -->
 				<div class="basic_icons site-header-item">
-					<a id="SearchIconD" class="header-search-icon toggle-header-search" name="europa-view" href="#"><i class="buddybuildr-icon buddybuildr-search"></i></a>
+					<a id="SearchIconD" class="header-search-icon toggle-header-search" name="europa-view" href="#"><i class="buddybuildr-icon buddybuildr-search" onclick="defaultSearch.open()"></i></a>
 					<!-- <a href="#" for="modal-1" class="header-user-icon"><i class="fa fa-user-circle"></i></a>-->
 					<?php if ( class_exists('Buddypress') && bp_is_active( 'notifications' ) ) { echo '<a class="alert_icon" onclick="NotificationsNav2()" id="Notif" href="#"><i class="buddybuildr-icon buddybuildr-bell-o"></i>' . buddybuildr_notification_count(). '</a>';}?>
 					<a href="#" class="header-user-icon"><label class="btn" for="modal-1"><i class="buddybuildr-icon buddybuildr-user-circle-o"></i></label></a>
@@ -58,6 +58,6 @@ do_action ( 'buddybuildr_before_header' );
 				<span class="search_prefix">Search </span><?php echo get_bloginfo( 'name' ); ?>
 			</p> -->
 				<div class="header-site-search-box"><?php get_search_form(); ?></div>
-				<span class="buddybuildr-icon buddybuildr-close toggle-header-search site-header-item close-header-search"></span>
+				<span class="buddybuildr-icon buddybuildr-close toggle-header-search site-header-item close-header-search" onclick="defaultSearch.close()"></span>
 		</div><!-- .site-search -->
 	</header><!-- #masthead -->
