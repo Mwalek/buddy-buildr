@@ -749,7 +749,7 @@ a:hover, a:focus {
 .site-header-app .site-header-item {
   color: #ffffff;
   /*default*/
-  margin: 10px;
+  margin: 0.609375em;
   line-height: 20px;
   display: inline-block;
 }

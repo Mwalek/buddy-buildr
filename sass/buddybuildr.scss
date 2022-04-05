@@ -72,7 +72,7 @@ a { color: $primary-color; @include animate( color, 320ms );
 .site-header-app {
 	.site-header-item {
 		color: $appify-header-color; /*default*/
-		margin:10px; 
+		margin: 0.609375em; 
 		line-height:20px;
 		display: inline-block;
 	}
