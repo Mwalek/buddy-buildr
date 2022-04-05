@@ -7,7 +7,7 @@ The theme is designed to be as SEO-friendly as possible.
 
 Some things to keep in mind in terms of SEO:
 
-[WordPress doesn't add Meta Descriptions](https://codex.wordpress.org/Meta_Tags_in_WordPress) by default. This means that sites would fail on of Lighthouse's ["Content Best Practices"](https://web.dev/meta-description/) tests.
+[WordPress doesn't add Meta Descriptions](https://codex.wordpress.org/Meta_Tags_in_WordPress) by default. This means that sites would fail one of Lighthouse's [_Content Best Practices_](https://web.dev/meta-description/) tests.
 
 In order to pass this test, I added a default description. This means that if you add your own meta description, for example, using an SEO plugin, then you will have multiple meta descriptions.
 
