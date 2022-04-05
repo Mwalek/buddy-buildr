@@ -414,18 +414,3 @@ const defaultSearch = {
     }
 }
 
-// document.getElementsByClassName("header-search-icon")[0].addEventListener("click", defaultSearch.open);
-// document.getElementsByClassName("close-header-search")[0].addEventListener("click", defaultSearch.close);
-
-/*const classWatch = ["header-search-icon", "close-header-search"];
-
-for(var i = 0; i < classWatch.length; i++) {
-    //console.log(classWatch[i]);
-    if(i === 0) {
-        //console.log(classWatch[i]);
-        if(classWatch[0]) {
-            document.getElementsByClassName("header-search-icon")[0].addEventListener("click", defaultSearch.open);
-        }
-    }
-}*/
-
