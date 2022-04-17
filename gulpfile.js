@@ -82,7 +82,11 @@ function watch_files() {
 	gulp.watch( sassWatch , compile_sass );
 	gulp.watch( webFonts , process_fonts );
 	browserSync.init({
-		proxy: "https://localhost/dev/"
+		proxy: "https://localhost/dev/",
+		https: {
+			key: "W:/xampp/htdocs/mkcert/localhost/localhost-key.pem",
+			cert: "W:/xampp/htdocs/mkcert/localhost/localhost.pem"
+		}
 	});
 }
 
