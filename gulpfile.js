@@ -1,22 +1,19 @@
 const gulp = require("gulp");
 const postcss = require("gulp-postcss");
-
 const atImport = require("postcss-import");
 const mqpacker = require("css-mqpacker");
 const cssnano = require("cssnano");
 // const cssimport = require("gulp-cssimport");
-
 const autoprefixer = require("gulp-autoprefixer");
 const sourcemaps = require("gulp-sourcemaps");
 const sass = require("gulp-sass")(require("sass"));
 const rename = require("gulp-rename");
-
 const browserSync = require("browser-sync").create();
-
 const styleWatch = "src/*.css";
 // const cssAssetWatch = "assets/css/style.css";
 const sassWatch = "sass/**/*.scss";
 const webFonts = "assets/css/webfonts/all.css";
+const eslint = require("gulp-eslint");
 
 function style() {
   const processors = [
@@ -81,6 +78,7 @@ function watchFiles() {
   // gulp.watch( cssAssetWatch , import_styles );
   gulp.watch( sassWatch, compileSass );
   gulp.watch( webFonts, processFonts );
+  gulp.watch( "scripts/*.js", lintJS );
   browserSync.init({
     proxy: "https://localhost/dev/",
     https: {
@@ -90,7 +88,20 @@ function watchFiles() {
   });
 }
 
-gulp.task("default", gulp.series(style, compileSass, processFonts));
+function lintJS() {
+  return src(["scripts/*.js"])
+  // eslint() attaches the lint output to the "eslint" property
+  // of the file object so it can be used by other modules.
+      .pipe(eslint())
+  // eslint.format() outputs the lint results to the console.
+  // Alternatively use eslint.formatEach() (see Docs).
+      .pipe(eslint.format())
+  // To have the process exit with an error code (1) on
+  // lint error, return the stream and pipe to failAfterError last.
+      .pipe(eslint.failAfterError());
+}
+
+gulp.task("default", gulp.series(style, compileSass, processFonts, lintJS));
 gulp.task( "sass", compileSass );
 gulp.task( "webfonts", processFonts );
 gulp.task( "watch", watchFiles );

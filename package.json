@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "browser-sync": "^2.27.9",
-    "gulp-cssimport": "^7.0.0"
+    "gulp-cssimport": "^7.0.0",
+    "gulp-eslint": "^6.0.0"
   }
 }
