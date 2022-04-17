@@ -28,8 +28,8 @@ function style() {
 		.pipe( sourcemaps.init() )
 		.pipe(autoprefixer())
 		.pipe(postcss(processors))
-		.pipe( sourcemaps.write('./') )
-		.pipe(gulp.dest('./dist'));
+		.pipe(gulp.dest('./dist'))
+		.pipe( sourcemaps.write('./') );
 }
 
 function import_styles(done){
