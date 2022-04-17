@@ -82,3 +82,4 @@ gulp.task('default', gulp.series(style, import_styles, compile_sass, process_fon
 gulp.task( 'sass', compile_sass );
 gulp.task( 'webfonts', process_fonts );
 gulp.task( 'watch', watch_files );
+gulp.task( 'style', style );
