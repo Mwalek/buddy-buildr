@@ -44,7 +44,7 @@ function import_styles(done){
 function compile_sass(done){
     gulp.src('sass/*.scss')
 		.pipe( sourcemaps.init() )
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
 		.pipe( sourcemaps.write('./') )
         .pipe(gulp.dest('./css'));
 		done();
