@@ -1,19 +1,19 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'commonjs': true,
-    'es2021': true,
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
   },
-  'extends': [
-    'google',
+  "extends": [
+    "google"
   ],
-  'parserOptions': {
-    'ecmaVersion': 'latest',
+  "parserOptions": {
+    "ecmaVersion": "latest"
   },
-  'rules': {
+  "rules": {
     "linebreak-style": 0,
-    "require-jsdoc" : 0,
+    "require-jsdoc": 0,
     "comma-dangle": ["error", "never"],
     "quotes": ["error", "double"]
-  },
+  }
 };
