@@ -15,7 +15,10 @@
     "scss"
   ],
   "browserslist": [
-    "last 2 versions"
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
   ],
   "author": "Mwale Kalenga",
   "license": "GPL-3.0",

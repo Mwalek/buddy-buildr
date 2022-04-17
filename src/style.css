@@ -689,8 +689,6 @@ main img.attachment-post-thumbnail {
 .buddybuildr input:not([type=submit]):not([type=file]) {
   padding: 10px;
   font-size: 17px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -787,8 +785,6 @@ form::after {
 
 .search-wrap input:focus {
 	border: 1px solid #ccc;
-	-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.24);
-  	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.24);
   	box-shadow: 0 1px 1px rgba(0,0,0,0.24);
 }
 /*==================================
@@ -1214,8 +1210,6 @@ p {
 }
 
 .comments-area input[type="submit"] {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	margin-left: auto;
 	display: block;
