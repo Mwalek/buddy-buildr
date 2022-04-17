@@ -11,6 +11,8 @@ var sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass')(require('sass'));
 var rename = require("gulp-rename");
 
+const browserSync = require('browser-sync').create();
+
 var styleWatch = 'src/*.css';
 var cssAssetWatch = 'assets/css/style.css';
 var sassWatch = 'sass/**/*.scss';
@@ -29,7 +31,8 @@ function style() {
 		.pipe(autoprefixer())
 		.pipe(postcss(processors))
 		.pipe(gulp.dest('./'))
-		.pipe( sourcemaps.write('./') );
+		.pipe( sourcemaps.write('./') )
+		.pipe(browserSync.stream());
 }
 
 function import_styles(done){
@@ -46,7 +49,8 @@ function compile_sass(done){
 		.pipe( sourcemaps.init() )
         .pipe(sass().on('error', sass.logError))
 		.pipe( sourcemaps.write('./') )
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('./css'))
+		.pipe(browserSync.stream());
 		done();
 }
 
@@ -68,7 +72,8 @@ function process_fonts(){
 		.pipe( sourcemaps.write('./') )
 		.pipe(gulp.dest(function(file) {
 			return file.base;
-		  }));
+		  }))
+		.pipe(browserSync.stream());
 }
 
 function watch_files() {
@@ -76,6 +81,9 @@ function watch_files() {
 	//gulp.watch( cssAssetWatch , import_styles );
 	gulp.watch( sassWatch , compile_sass );
 	gulp.watch( webFonts , process_fonts );
+	browserSync.init({
+		proxy: "https://localhost/dev/"
+	});
 }
 
 gulp.task('default', gulp.series(style, compile_sass, process_fonts));
