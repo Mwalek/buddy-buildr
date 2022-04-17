@@ -11,5 +11,9 @@ module.exports = {
     'ecmaVersion': 'latest',
   },
   'rules': {
+    "linebreak-style": 0,
+    "require-jsdoc" : 0,
+    "comma-dangle": ["error", "never"],
+    "quotes": ["error", "double"]
   },
 };
