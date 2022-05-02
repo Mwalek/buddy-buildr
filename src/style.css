@@ -2319,11 +2319,6 @@ border-radius: 9px;
     /* display: none !important; */
 }
 
-.header-site-search {
-	/* display: none; */
-	/*left: -100%;*/
-}
-
 .show-search {
 	top: 0;
     left:0px !important;

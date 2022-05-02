@@ -401,7 +401,7 @@ const defaultSearch = {
       searchHeader.classList.add("show-search");
       console.log("You have opened the search!");
       defaultSearch.isOpen = true;
-        return "You have opened the search!";
+      return "You have opened the search!";
     }
   },
   close: function() {
