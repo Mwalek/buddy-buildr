@@ -88,8 +88,8 @@ function watchFiles() {
   });
 }
 
-function lintJS() {
-  gulp.src(["scripts/*.js"])
+function lintJS(done) {
+  gulp.src(["scripts/js-main.js"])
   // eslint() attaches the lint output to the "eslint" property
   // of the file object so it can be used by other modules.
       .pipe(eslint())
@@ -98,7 +98,13 @@ function lintJS() {
       .pipe(eslint.format())
   // To have the process exit with an error code (1) on
   // lint error, return the stream and pipe to failAfterError last.
-      .pipe(eslint.failAfterError());
+      .pipe(eslint.failAfterError())
+      .on("error", handleError);
+  done();
+}
+
+function handleError(err) {
+  // console.log(err.toString());
 }
 
 gulp.task("default", gulp.series(style, compileSass, processFonts, lintJS));
