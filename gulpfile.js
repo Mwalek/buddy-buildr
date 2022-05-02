@@ -89,7 +89,7 @@ function watchFiles() {
 }
 
 function lintJS() {
-  return src(["scripts/*.js"])
+  gulp.src(["scripts/*.js"])
   // eslint() attaches the lint output to the "eslint" property
   // of the file object so it can be used by other modules.
       .pipe(eslint())

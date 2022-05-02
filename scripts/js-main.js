@@ -147,18 +147,34 @@ function controlSearch() {
     
 }
 
+function getClass(getClassfuncCont) {
+   return document.getElementsByClassName(getClassfuncCont);
+}
+
 /* lSidenav */
 
  function LeftNav() {
+    const pageItems = getClass("page_item");
+    const offcanvasClose = getClass("offcanvas-close");
 	var x = document.getElementById("lSidenav");
+    function toggleMenuVisibility() {
+        Array.from(pageItems).map(element=>element.style.display = "block");
+        Array.from(offcanvasClose).map(element=>element.style.fontSize = "16px");
+    }
 	if (x.style.width == "40%" || x.style.width == "300px") {
         document.getElementById("lSidenav").style.width = "0";
 		document.getElementById("Overlay").style.backgroundColor = "transparent";
 		document.getElementById("Overlay").style.width = "0";
+        Array.from(pageItems).map(element=>element.style.display = "none");
+        Array.from(offcanvasClose).map(element=>element.style.fontSize = "0");
+        setTimeout(toggleMenuVisibility, 500);
     } else {
         document.getElementById("lSidenav").style.width = "300px";
 		document.getElementById("Overlay").style.backgroundColor = "rgba(0,0,0,0.4)";
 		document.getElementById("Overlay").style.width = "100%";
+        Array.from(pageItems).map(element=>element.style.display = "none");
+        Array.from(offcanvasClose).map(element=>element.style.fontSize = "0");
+        setTimeout(toggleMenuVisibility, 250);
     }
 	
 }

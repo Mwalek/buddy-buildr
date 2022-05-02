@@ -1033,7 +1033,7 @@ a:hover, a:focus {
   left: 0;
   text-align: left;
   background: rgba(0, 0, 0, 0.9);
-  transition: opacity 0.25s ease;
+  /*transition: opacity .25s ease;*/
   z-index: 10;
 }
 
@@ -1163,6 +1163,7 @@ a:hover, a:focus {
   border: none;
   text-align: initial;
   cursor: pointer;
+  transition: none !important;
 }
 
 .grid-container .sidenav {
