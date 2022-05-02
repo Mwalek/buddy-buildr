@@ -2,13 +2,13 @@ module.exports = {
   "env": {
     "browser": true,
     "commonjs": true,
-    "es2021": true
+    "es6": true
   },
   "extends": [
     "google"
   ],
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": 6
   },
   "rules": {
     "linebreak-style": 0,

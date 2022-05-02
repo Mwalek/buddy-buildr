@@ -106,3 +106,4 @@ gulp.task( "sass", compileSass );
 gulp.task( "webfonts", processFonts );
 gulp.task( "watch", watchFiles );
 gulp.task( "style", style );
+gulp.task( "lintjs", lintJS );
