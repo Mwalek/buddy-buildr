@@ -139,6 +139,10 @@ function controlSearch() {
   }
 }
 
+/* getElementsByClassName helper function
+* e.g. Array.from(class).map((element)=>element.style.fontSize = "16px");
+*/
+
 function getClass(getClassfuncCont) {
   return document.getElementsByClassName(getClassfuncCont);
 }
@@ -146,18 +150,18 @@ function getClass(getClassfuncCont) {
 /* lSidenav */
 
 function LeftNav() {
-  const pageItems = getClass("page_item");
+  const menuItems = document.querySelectorAll(".sidenav ul li");
   const offcanvasClose = getClass("offcanvas-close");
   const x = document.getElementById("lSidenav");
   function toggleMenuVisibility() {
-    Array.from(pageItems).map((element)=>element.style.display = "block");
+    Array.from(menuItems).map((element)=>element.style.display = "block");
     Array.from(offcanvasClose).map((element)=>element.style.fontSize = "16px");
   }
   if (x.style.width == "40%" || x.style.width == "300px") {
     document.getElementById("lSidenav").style.width = "0";
     document.getElementById("Overlay").style.backgroundColor = "transparent";
     document.getElementById("Overlay").style.width = "0";
-    Array.from(pageItems).map((element)=>element.style.display = "none");
+    Array.from(menuItems).map((element)=>element.style.display = "none");
     Array.from(offcanvasClose).map((element)=>element.style.fontSize = "0");
     setTimeout(toggleMenuVisibility, 500);
   } else {
@@ -166,7 +170,7 @@ function LeftNav() {
         "Overlay"
     ).style.backgroundColor = "rgba(0,0,0,0.4)";
     document.getElementById("Overlay").style.width = "100%";
-    Array.from(pageItems).map((element)=>element.style.display = "none");
+    Array.from(menuItems).map((element)=>element.style.display = "none");
     Array.from(offcanvasClose).map((element)=>element.style.fontSize = "0");
     setTimeout(toggleMenuVisibility, 250);
   }
