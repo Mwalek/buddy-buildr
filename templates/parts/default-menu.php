@@ -6,6 +6,6 @@
 
 <?php else: ?>
 
-	<p class="p15">Built by <a href="//www.mwale.me" target="_blank" style="text-decoration: none;">Mwale</a></p>
+	<p class="p15">Built by <a href="//www.mwale.me" target="_blank">Mwale</a></p>
 
 <?php endif ?>

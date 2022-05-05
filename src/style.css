@@ -658,7 +658,10 @@ main img.attachment-post-thumbnail {
 =            8.0 THEME DEFAULTS            =
 ==================================*/
 
-.content-area a, #colophon a   { color: #005780 }  /* unvisited links */
+/* unvisited links */
+
+.content-area a {color: #005780}
+#colophon a {color: #757575}  
 
 .widget-area {
 	font-size: 16px;
@@ -671,8 +674,7 @@ main img.attachment-post-thumbnail {
 	line-height: 35px;
 }
 
-.widget-area a:hover {
-	/*color: #0082c0;*/
+.widget-area a:hover, #colophon a:hover {
 	text-decoration: underline;
 }
 
