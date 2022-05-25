@@ -382,8 +382,11 @@ main img.attachment-post-thumbnail {
 }*/
 
 .home .site-header .home-icon:after {
-	content: '\26AB';
-	color: rgba(0, 0, 0, 0.17);
+	color: rgb(0, 215, 195);
+	content: "\2022";
+	font-size: 3.125rem;
+	line-height: 0;
+	vertical-align: middle;
 }
 
 .site-header .username {
