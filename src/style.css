@@ -833,24 +833,25 @@ form::after {
 .grid-item .title {
 	display: block;
 	line-height: 32px;
-	margin-bottom: 8px;
+	margin-bottom: 20px;
 	font-size: 24px;
 }
 
-.grid-item .posted-on {
-	display: inline-block;
-	overflow: hidden;
-	color: #848484;
-}
-
 .grid-item .byline {
-	display: inline-block;
 	width: 150px;
 	white-space: nowrap;
-	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.grid-item .posted-on, .grid-item .byline {
+	display: inline-block;
 	color: #848484;
 	font-size: 18px;
+	overflow: hidden;
+}
+
+.grid-item .posted-on > span, .grid-item .byline > span {
+	margin-right: 3px;
 }
 
 .grid-item .byline a {

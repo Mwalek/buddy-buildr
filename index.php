@@ -57,7 +57,7 @@ buddybuildr_header_switcher(); ?>
 
 						<!-- POST METADATA -->
 						<p class="author-text">
-							<span class="posted-on"><span class="fas fa-calendar fa-fw" aria-hidden="true"></span><?php echo the_time('F jS, Y');?></span><span class="byline"><span class="fas fa-user-circle fa-fw" aria-hidden="true"></span> <?php the_author_posts_link(); ?></span> </p>            
+							<span class="posted-on"><span class="fas fa-calendar fa-fw" aria-hidden="true"></span><?php echo the_time('F jS, Y');?></span><span class="byline"><span class="fas fa-user-circle fa-fw" aria-hidden="true"></span><?php the_author_posts_link(); ?></span> </p>            
 						<!-- POST EXCERPT
 						<?php the_excerpt(); ?> -->
 						</div><!-- .grid-item-content -->
