@@ -845,11 +845,12 @@ form::after {
 
 .grid-item .byline {
 	display: inline-block;
-	width: 100px;
+	width: 150px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	color: #848484;
+	font-size: 18px;
 }
 
 .grid-item .byline a {
