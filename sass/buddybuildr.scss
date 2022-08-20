@@ -123,7 +123,9 @@ a { color: $primary-color; @include animate( color, 320ms );
 	}
 	.basic_icons { font-size: 0;
 		a { border-radius: 50%; width: 40px; height: 40px;}
+		a.alert_icon {position: relative;}
 		label { padding: 10px; display: inline-block; cursor: pointer; color: inherit; }
+		.alert_count {position:absolute; top: 5px; left: 0;}
 	}
 	.hamburger { float: left; padding: 9px 10px 10px 10px; cursor: pointer; margin: 0;
 		&:hover,

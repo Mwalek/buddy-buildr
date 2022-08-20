@@ -815,11 +815,19 @@ a:hover, a:focus {
   width: 40px;
   height: 40px;
 }
+.site-header-main .basic_icons a.alert_icon {
+  position: relative;
+}
 .site-header-main .basic_icons label {
   padding: 10px;
   display: inline-block;
   cursor: pointer;
   color: inherit;
+}
+.site-header-main .basic_icons .alert_count {
+  position: absolute;
+  top: 5px;
+  left: 0;
 }
 .site-header-main .hamburger {
   float: left;
