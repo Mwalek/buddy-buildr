@@ -922,7 +922,7 @@ form::after {
 
 .grid-wrap {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   margin-left: 0;
@@ -1483,9 +1483,14 @@ main img {
 }
 
 .toggle-header-right {
-  padding: 9px;
+  padding: 0;
   cursor: pointer;
   margin-left: auto;
+}
+
+.toggle-header-right > i {
+  position: absolute;
+  padding: 10px 0;
 }
 
 .toggle-header-right .dot3 {
@@ -1501,7 +1506,13 @@ main img {
   display: inline-block;
   margin: 0;
   position: relative;
-  right: 20px;
+  top: 5px;
+}
+
+@media only screen and (min-width: 650px) {
+  .toggle-header-right .alert_count {
+    right: 20px;
+  }
 }
 
 .buddybuildr.search-no-results .search-wrap input[type="search"] {
