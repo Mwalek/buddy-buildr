@@ -76,6 +76,9 @@ a { color: $primary-color; @include animate( color, 320ms );
 		line-height:20px;
 		display: inline-block;
 	}
+	.hamburger.site-header-item {
+		margin-left: 0; 
+	}
 	.site-title {
 		a {line-height: 40px;}
 	}
@@ -534,6 +537,9 @@ a { color: $primary-color; @include animate( color, 320ms );
 
 		.header-wrapper .header-right {
 			display: block;
+		}
+		.hamburger.site-header-item {
+			margin-left: 0.609375em; 
 		}
 	}
 }

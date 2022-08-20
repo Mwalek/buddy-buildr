@@ -715,6 +715,9 @@ a:hover, a:focus {
   line-height: 20px;
   display: inline-block;
 }
+.site-header-app .hamburger.site-header-item {
+  margin-left: 0;
+}
 .site-header-app .site-title a {
   line-height: 40px;
 }
@@ -1240,6 +1243,9 @@ a:hover, a:focus {
   }
   .site-header-app .header-wrapper .header-right {
     display: block;
+  }
+  .site-header-app .hamburger.site-header-item {
+    margin-left: 0.609375em;
   }
 }
 @media (min-width: 899px) {
