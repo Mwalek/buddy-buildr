@@ -1486,10 +1486,11 @@ main img {
   padding: 0;
   cursor: pointer;
   margin-left: auto;
+  position: relative;
 }
 
 .toggle-header-right > i {
-  position: absolute;
+  position: relative;
   padding: 10px 0;
 }
 
@@ -1505,8 +1506,9 @@ main img {
   line-height: 20px;
   display: inline-block;
   margin: 0;
-  position: relative;
+  position: absolute;
   top: 5px;
+  right: 5px;
 }
 
 @media only screen and (min-width: 650px) {
