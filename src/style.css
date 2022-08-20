@@ -720,6 +720,9 @@ main img.attachment-post-thumbnail {
   .username {
     float: right;
   }
+  .grid-wrap {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 /*==================================
@@ -922,7 +925,7 @@ form::after {
 
 .grid-wrap {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   margin-left: 0;
