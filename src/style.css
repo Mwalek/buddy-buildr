@@ -884,6 +884,11 @@ form::after {
   text-decoration: none;
 }
 
+.grid-item-image > a {
+  display: block;
+  font-size: 0;
+}
+
 .grid-item .title {
   display: block;
   line-height: 32px;
