@@ -884,6 +884,12 @@ form::after {
   text-decoration: none;
 }
 
+.grid-item-image > a > img {
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  background-color: #848484;
+}
+
 .grid-item-image > a {
   display: block;
   font-size: 0;
