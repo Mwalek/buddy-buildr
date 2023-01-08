@@ -1233,7 +1233,13 @@ body.buddypress .grid-container {
 .grid-item-df-img {
   background: #babab7;
   text-align: center;
-  padding: 75px 0;
+  aspect-ratio: 3 / 2;
+}
+
+.grid-item-df-img > svg {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .entry-footer span {
