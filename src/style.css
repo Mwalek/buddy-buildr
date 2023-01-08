@@ -887,7 +887,7 @@ form::after {
 .grid-item-image > a > img {
   aspect-ratio: 3 / 2;
   object-fit: contain;
-  background-color: #848484;
+  background-color: #babab7;
 }
 
 .grid-item-image > a {
