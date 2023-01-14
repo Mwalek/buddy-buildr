@@ -598,7 +598,7 @@ function exterior_header_size()
                 }
                 header#Dmasthead {height: 90px;}
                 #Dmasthead .header-site-search.transition-left {
-                    top: -90px;
+                    top: 0;
                     padding: 25px 10px;
                     height: 90px;
                 }

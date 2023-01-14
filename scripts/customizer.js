@@ -136,8 +136,14 @@
     value.bind(function (to) {
       if ("header-size-min" === to) {
         $("#Dmasthead").removeClass("full-header").addClass("min-header");
+        $("#Dmasthead").css("height", "60px");
+        $("#DefaultHeader").css("height", "60px");
+        $("#Dmasthead .site-header-main").css("padding", "10px");
       } else {
         $("#Dmasthead").removeClass("min-header").addClass("full-header");
+        $("#Dmasthead").css("height", "90px");
+        $("#DefaultHeader").css("height", "90px");
+        $("#Dmasthead .site-header-main").css("padding", "25px 20px");
       }
     });
   });

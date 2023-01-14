@@ -2440,11 +2440,11 @@ div::-webkit-scrollbar-thumb {
 }
 
 .transition-right {
-  transition: top 1.5s ease-out; /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+  transition: top 0.5s ease-out; /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
 }
 
 .transition-left {
-  transition: top 1.5s ease-out; /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+  transition: top 0.5s ease-out; /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
 }
 
 @keyframes overflowhidden {
@@ -2493,7 +2493,15 @@ div::-webkit-scrollbar-thumb {
 
 /* Customizer */
 
+.site-header-main {
+  transition: all 0.5s ease-out;
+}
+
 @media only screen and (min-width: 899px) {
+  #Dmasthead.min-header .site-header-main {
+    height: 60px;
+    padding: 10px;
+  }
   #Dmasthead.full-header .site-header-main {
     height: 90px;
     padding: 25px 20px;
@@ -2502,7 +2510,7 @@ div::-webkit-scrollbar-thumb {
     height: 90px;
   }
   #Dmasthead.full-header .header-site-search.transition-left {
-    top: -90px;
+    top: 0;
     padding: 25px 10px;
     height: 90px;
   }
