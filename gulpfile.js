@@ -20,16 +20,17 @@ function style() {
     atImport,
     mqpacker,
     cssnano({
-      calc: {precision: 2}
-    })
+      calc: { precision: 2 },
+    }),
   ];
-  return gulp.src("src/style.css")
-      .pipe( sourcemaps.init() )
-      .pipe(autoprefixer())
-      .pipe(postcss(processors))
-      .pipe(gulp.dest("./"))
-      .pipe( sourcemaps.write("./") )
-      .pipe(browserSync.stream());
+  return gulp
+    .src("src/style.css")
+    .pipe(sourcemaps.init())
+    .pipe(autoprefixer())
+    .pipe(postcss(processors))
+    .pipe(gulp.dest("./"))
+    .pipe(sourcemaps.write("./"))
+    .pipe(browserSync.stream());
 }
 
 /* function import_styles(done){
@@ -42,12 +43,13 @@ function style() {
 } */
 
 function compileSass(done) {
-  gulp.src("sass/*.scss")
-      .pipe( sourcemaps.init() )
-      .pipe(sass().on("error", sass.logError))
-      .pipe( sourcemaps.write("./") )
-      .pipe(gulp.dest("./css"))
-      .pipe(browserSync.stream());
+  gulp
+    .src("sass/*.scss")
+    .pipe(sourcemaps.init())
+    .pipe(sass().on("error", sass.logError))
+    .pipe(sourcemaps.write("./"))
+    .pipe(gulp.dest("./css"))
+    .pipe(browserSync.stream());
   done();
 }
 
@@ -56,50 +58,52 @@ function processFonts() {
     atImport,
     mqpacker,
     cssnano({
-      calc: {precision: 2}
-    })
+      calc: { precision: 2 },
+    }),
   ];
-  return gulp.src("assets/css/webfonts/all.css")
-      .pipe( sourcemaps.init() )
-      .pipe(autoprefixer())
-      .pipe(postcss(processors))
-      .pipe(rename({
-        suffix: ".min"
-      }))
-      .pipe( sourcemaps.write("./") )
-      .pipe(gulp.dest(function(file) {
+  return gulp
+    .src("assets/css/webfonts/all.css")
+    .pipe(sourcemaps.init())
+    .pipe(autoprefixer())
+    .pipe(postcss(processors))
+    .pipe(
+      rename({
+        suffix: ".min",
+      })
+    )
+    .pipe(sourcemaps.write("./"))
+    .pipe(
+      gulp.dest(function (file) {
         return file.base;
-      }))
-      .pipe(browserSync.stream());
+      })
+    )
+    .pipe(browserSync.stream());
 }
 
 function watchFiles() {
-  gulp.watch( styleWatch, style );
+  gulp.watch(styleWatch, style);
   // gulp.watch( cssAssetWatch , import_styles );
-  gulp.watch( sassWatch, compileSass );
-  gulp.watch( webFonts, processFonts );
-  gulp.watch( "scripts/*.js", lintJS );
+  gulp.watch(sassWatch, compileSass);
+  gulp.watch(webFonts, processFonts);
+  gulp.watch("scripts/*.js", lintJS);
   browserSync.init({
-    proxy: "https://localhost/dev/",
-    https: {
-      key: "W:/xampp/htdocs/mkcert/localhost/localhost-key.pem",
-      cert: "W:/xampp/htdocs/mkcert/localhost/localhost.pem"
-    }
+    proxy: "http://dev.local/",
   });
 }
 
 function lintJS(done) {
-  gulp.src(["scripts/js-main.js"])
-  // eslint() attaches the lint output to the "eslint" property
-  // of the file object so it can be used by other modules.
-      .pipe(eslint())
-  // eslint.format() outputs the lint results to the console.
-  // Alternatively use eslint.formatEach() (see Docs).
-      .pipe(eslint.format())
-  // To have the process exit with an error code (1) on
-  // lint error, return the stream and pipe to failAfterError last.
-      .pipe(eslint.failAfterError())
-      .on("error", handleError);
+  gulp
+    .src(["scripts/js-main.js"])
+    // eslint() attaches the lint output to the "eslint" property
+    // of the file object so it can be used by other modules.
+    .pipe(eslint())
+    // eslint.format() outputs the lint results to the console.
+    // Alternatively use eslint.formatEach() (see Docs).
+    .pipe(eslint.format())
+    // To have the process exit with an error code (1) on
+    // lint error, return the stream and pipe to failAfterError last.
+    .pipe(eslint.failAfterError())
+    .on("error", handleError);
   done();
 }
 
@@ -108,8 +112,8 @@ function handleError(err) {
 }
 
 gulp.task("default", gulp.series(style, compileSass, processFonts, lintJS));
-gulp.task( "sass", compileSass );
-gulp.task( "webfonts", processFonts );
-gulp.task( "watch", watchFiles );
-gulp.task( "style", style );
-gulp.task( "lintjs", lintJS );
+gulp.task("sass", compileSass);
+gulp.task("webfonts", processFonts);
+gulp.task("watch", watchFiles);
+gulp.task("style", style);
+gulp.task("lintjs", lintJS);
