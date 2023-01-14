@@ -382,7 +382,8 @@ main img.attachment-post-thumbnail {
   border-right: 4px;
 }
 
-.site-header a:hover {
+.site-header a:hover,
+.def-hover-effect:hover {
   background-color: rgba(0, 0, 0, 0.071);
   border-radius: 4px;
 }
@@ -1511,7 +1512,7 @@ main img {
 
 .toggle-header-right > i {
   position: relative;
-  padding: 10px 0;
+  padding: 10px;
 }
 
 .toggle-header-right .dot3 {
@@ -2505,4 +2506,9 @@ div::-webkit-scrollbar-thumb {
     padding: 25px 10px;
     height: 90px;
   }
+}
+
+/* SVG SPRITE CSS */
+svg.icon {
+  fill: currentColor;
 }

@@ -123,8 +123,7 @@ input[type=submit],
   font-display: swap;
   font-style: normal;
   font-weight: 100;
-  src: local("Roboto Thin"), local("Roboto-Thin"), url("../fonts/roboto-v18-latin-100.woff2") format("woff2"), url("../fonts/roboto-v18-latin-100.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local("Roboto Thin"), local("Roboto-Thin"), url("../fonts/roboto-v18-latin-100.woff2") format("woff2"), url("../fonts/roboto-v18-latin-100.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* roboto-300 - latin */
 @font-face {
@@ -132,8 +131,7 @@ input[type=submit],
   font-display: swap;
   font-style: normal;
   font-weight: 300;
-  src: local("Roboto Light"), local("Roboto-Light"), url("../fonts/roboto-v18-latin-300.woff2") format("woff2"), url("../fonts/roboto-v18-latin-300.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local("Roboto Light"), local("Roboto-Light"), url("../fonts/roboto-v18-latin-300.woff2") format("woff2"), url("../fonts/roboto-v18-latin-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /*
 ################
@@ -481,8 +479,7 @@ img.aligncenter {
 .wp-caption {
   background: #fff;
   border: 1px solid #f0f0f0;
-  max-width: 96%;
-  /* Image does not overflow the content area */
+  max-width: 96%; /* Image does not overflow the content area */
   padding: 5px 3px 10px;
   text-align: center;
 }
@@ -541,8 +538,7 @@ img.aligncenter {
   text-decoration: none;
   top: 5px;
   width: auto;
-  z-index: 100000;
-  /* Above WP toolbar. */
+  z-index: 100000; /* Above WP toolbar. */
 }
 
 .buddybuildr .bb_button_small, .buddybuildr .bb_button_s {
@@ -709,14 +705,16 @@ a:hover, a:focus {
 	------------------------------------------------
 */
 .site-header-app .site-header-item {
-  color: #ffffff;
-  /*default*/
+  color: #ffffff; /*default*/
   margin: 0.609375em;
   line-height: 20px;
   display: inline-block;
 }
 .site-header-app .hamburger.site-header-item {
   margin-left: 0;
+}
+.site-header-app .toggle-header-right {
+  margin-right: 0;
 }
 .site-header-app .site-title a {
   line-height: 40px;
@@ -805,8 +803,7 @@ a:hover, a:focus {
   background-color: rgba(0, 0, 0, 0.071);
 }
 .site-header-main .site-header-item {
-  color: #ffffff;
-  /*default*/
+  color: #ffffff; /*default*/
 }
 
 /* Header Height ( site-branding height ) */
@@ -842,7 +839,9 @@ a:hover, a:focus {
   font-size: 0;
 }
 
-.site-header-main-right, .basic_icons, .basic_icons a {
+.site-header-main-right,
+.basic_icons,
+.basic_icons a {
   display: inline-block;
 }
 
@@ -900,11 +899,14 @@ a:hover, a:focus {
   bottom: 3px;
 }
 
-.header-site-search-box form, .header-site-search-box .search-wrap, .header-site-search-box .search-field {
+.header-site-search-box form,
+.header-site-search-box .search-wrap,
+.header-site-search-box .search-field {
   width: 100%;
 }
 
-.header-site-search span, .header-site-search i {
+.header-site-search span,
+.header-site-search i {
   font-size: 18px;
   line-height: 20px;
   padding: 10px;
@@ -975,7 +977,9 @@ a:hover, a:focus {
 ################
 */
 /* Logged Out */
-.logged-out .community_menu, .logged-out #Notif, .logged-out .alert_count {
+.logged-out .community_menu,
+.logged-out #Notif,
+.logged-out .alert_count {
   display: none;
 }
 .logged-out .site-header .register {
@@ -1091,7 +1095,8 @@ a:hover, a:focus {
                OFF CANVAS (SIDENAVs)
 ################
 */
-.notifications_container, .community_container {
+.notifications_container,
+.community_container {
   display: none;
 }
 
@@ -1115,7 +1120,8 @@ a:hover, a:focus {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
   overflow: auto;
 }
-.sidenav a, .sidenav .offcanvas-close {
+.sidenav a,
+.sidenav .offcanvas-close {
   padding: 20px 20px 20px 32px;
   text-decoration: none;
   font-size: 16px;
@@ -1126,7 +1132,8 @@ a:hover, a:focus {
   line-height: 20px;
   transition: 0.3s;
 }
-.sidenav a:hover, .sidenav .offcanvas-close:hover {
+.sidenav a:hover,
+.sidenav .offcanvas-close:hover {
   background-color: #ccc;
   color: #111;
 }
@@ -1152,11 +1159,13 @@ a:hover, a:focus {
   height: 100%;
 }
 
-.community_container, .notifications_container {
+.community_container,
+.notifications_container {
   overflow: auto;
 }
 
-.sidenav a:before, .sidenav a:after {
+.sidenav a:before,
+.sidenav a:after {
   font-weight: 900;
 }
 
@@ -1183,15 +1192,15 @@ a:hover, a:focus {
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-  display: none;
-  /* Close button hidden by default */
+  display: none; /* Close button hidden by default */
 }
 
 #MCH_title {
   padding: 18px;
 }
 
-.buddybuildr .rsidenav a, .buddybuildr #my_community_header h3 {
+.buddybuildr .rsidenav a,
+.buddybuildr #my_community_header h3 {
   font-family: "roboto", serif;
   font-size: 16px;
   line-height: 20px;
@@ -1199,7 +1208,8 @@ a:hover, a:focus {
   color: #818181;
 }
 
-.rsidenav a:before, #my_community_header h3:before {
+.rsidenav a:before,
+#my_community_header h3:before {
   font-family: "Font Awesome 5 Free";
 }
 
@@ -1207,7 +1217,8 @@ a:hover, a:focus {
   list-style: none;
 }
 
-.notifications_container h3, .notifications_container > a {
+.notifications_container h3,
+.notifications_container > a {
   line-height: 39px;
   padding: 10px 20px;
   border-bottom: 1px solid #ededed;
@@ -1228,7 +1239,6 @@ a:hover, a:focus {
   .site-header h3 {
     line-height: 20px;
   }
-
   .site-header-app {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -1252,11 +1262,9 @@ a:hover, a:focus {
   nav.main-navigation {
     display: inline-block;
   }
-
   header .icon {
     display: none;
   }
-
   /* Sub menu fix */
   .site-header-main {
     overflow: unset;
@@ -1283,22 +1291,19 @@ a:hover, a:focus {
     display: inline-block;
     color: inherit;
   }
-
-  .site-header-common > *, .site-branding * {
+  .site-header-common > *,
+  .site-branding * {
     display: inline-block;
   }
-
   /* Float the link section to the right */
   .site-header-main-right {
     float: right;
     min-width: 400px;
     /* width: calc(100% - 45px);*/
   }
-
   .menu-templates-container {
     display: inline-block;
   }
-
   .main-navigation {
     background: unset;
     width: auto;
@@ -1311,7 +1316,8 @@ a:hover, a:focus {
     left: auto;
     border-radius: 2px 0 2px 2px;
   }
-  .main-navigation ul li:nth-last-child(-n+2) ul li:hover > ul, .main-navigation ul li:nth-last-child(-n+2) ul li.focus > ul {
+  .main-navigation ul li:nth-last-child(-n+2) ul li:hover > ul,
+  .main-navigation ul li:nth-last-child(-n+2) ul li.focus > ul {
     right: 100%;
     left: unset;
   }
@@ -1321,7 +1327,6 @@ a:hover, a:focus {
   .main-navigation.responsive {
     background: unset;
   }
-
   /* Set up round style menu */
   /* Sub Menu Styles */
   .site-header-main .menu-item-has-children a {
@@ -1339,12 +1344,10 @@ a:hover, a:focus {
   .site-header-main .sub-menu a:hover {
     background-color: rgba(0, 0, 0, 0.071);
   }
-
   .site-header-common .sub-menu a {
     border-radius: 0;
     color: #d44646;
   }
-
   .site-header-common .menu-item-has-children > a:after {
     content: "▼";
     font-size: 12px;
@@ -1353,15 +1356,12 @@ a:hover, a:focus {
     position: relative;
     margin-right: 5px;
   }
-
   .site-header-common ul li.menu-item-has-children:hover > a {
     color: #ffffff;
   }
-
   .main-navigation ul > li.menu-item-has-children > a {
     width: auto;
   }
-
   .buddybuildr .main-navigation ul.menu ul.sub-menu {
     position: absolute;
     background-color: #ffffff;
@@ -1379,22 +1379,18 @@ a:hover, a:focus {
   .buddybuildr li.menu-item-has-children {
     overflow: unset;
   }
-
   li:nth-last-child(-n+2) .sub-menu {
     display: none;
   }
-
   li:nth-last-child(-n+2) .sub-menu:hover {
     display: block;
   }
-
   li.menu-item-has-children {
     overflow: hidden;
   }
   li.menu-item-has-children a:hover + .sub-menu {
     display: block;
   }
-
   /* Exterior Class: This class is used for pages that are not APP pages. */
   .exterior .site-header .site-branding {
     width: unset;
@@ -1410,29 +1406,24 @@ a:hover, a:focus {
   .exterior .site-header .site-branding .site-title a:hover {
     background-color: rgba(0, 0, 0, 0.071);
   }
-
   .buddybuildr .modal__inner {
     min-height: 450px;
     width: 50%;
     height: 50%;
     box-sizing: unset;
   }
-
   .bb-login input.has-padding {
     padding: 16px 20px 16px 50px;
   }
-
   .buddybuildr .main-navigation li:hover > .sub-menu {
     overflow: visible;
     display: block;
   }
-
   .header-site-search.transition-left {
     /*top: -60px;*/
     padding: 10px;
     height: 60px;
   }
-
   #Dmasthead {
     height: 90px;
   }
