@@ -452,7 +452,7 @@ function headerSocialAreaAnimation(params) {
   headerSocialAreaStyle.bottom !== "0px"
     ? (headerSocialAreaStyle.bottom = "0px")
     : (headerSocialAreaStyle.bottom = "60px");
-  if (params === "none") {
+  if (params === "hidden") {
     document.getElementById("header-right").style.height = "0px";
   } else {
     document.getElementById("header-right").style.height = "60px";
@@ -463,22 +463,22 @@ function headerSocialAreaAnimation(params) {
 function toggleVisibilityCustom(
   ele,
   visibleByDefault = false,
-  display = "block",
+  display = "visible",
   callback = "",
   callbackParams = ""
 ) {
   let params = callbackParams;
-  if (ele.style.display === "") {
+  if (ele.style.visibility === "") {
     let defaultVisibility;
     visibleByDefault
       ? (defaultVisibility = display)
-      : (defaultVisibility = "none");
-    ele.style.display = defaultVisibility;
+      : (defaultVisibility = "hidden");
+    ele.style.visibility = defaultVisibility;
   }
-  ele.style.display !== display
-    ? (ele.style.display = display)
-    : (ele.style.display = "none");
-  if (params === "") params = ele.style.display;
+  ele.style.visibility !== display
+    ? (ele.style.visibility = display)
+    : (ele.style.visibility = "hidden");
+  if (params === "") params = ele.style.visibility;
   callback !== "" && callback(params);
 }
 
@@ -489,7 +489,7 @@ function customVisibilityToggler(e) {
   toggleVisibilityCustom(
     document.querySelector("#header-right"),
     false,
-    "block",
+    "visible",
     headerSocialAreaAnimation
   );
 }

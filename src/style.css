@@ -1418,7 +1418,9 @@ main img {
   }
 
   .header-wrapper .header-right {
-    display: block;
+    visibility: visible;
+    height: 100%;
+    /* display: block; */
   }
 }
 
@@ -1431,7 +1433,10 @@ main img {
 }
 
 .header-right {
-  display: none;
+  visibility: hidden;
+  transition: all 0.4s linear;
+  height: 0;
+  /* display: none; */
 }
 
 .site-header .username {
@@ -1441,7 +1446,7 @@ main img {
 .header-social-area {
   position: relative;
   text-align: center;
-  transition: bottom 0.4s linear !important;
+  transition: all 0.4s linear !important;
   bottom: 60px;
 }
 
