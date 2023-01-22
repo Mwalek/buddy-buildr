@@ -1409,6 +1409,8 @@ main img {
 
   .header-social-area {
     float: right;
+    position: relative;
+    bottom: 0px;
   }
 
   .header-left .toggle-header-right {
@@ -1437,7 +1439,10 @@ main img {
 }
 
 .header-social-area {
+  position: relative;
   text-align: center;
+  transition: bottom 0.4s linear !important;
+  bottom: 60px;
 }
 
 .social-area-icons {

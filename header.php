@@ -44,7 +44,7 @@ do_action('buddybuildr_before_header');
                         }
                         ?>
                     </div>
-                    <div class="toggle-header-right site-header-item header-button"><i class="def-hover-effect" style="display:inline-block;"><svg
+                    <div class="toggle-header-right site-header-item header-button" onclick="customVisibilityToggler(event)"><i class="def-hover-effect" style="display:inline-block;"><svg
           class="icon icon--chevron-down color-36c"
           style="vertical-align: middle;"
           height="1em"
