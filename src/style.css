@@ -1417,7 +1417,7 @@ main img {
     display: none;
   }
 
-  .header-wrapper .header-right {
+  .header-wrapper .header-right.visible-on-mobile {
     visibility: visible;
     height: 100%;
     /* display: block; */

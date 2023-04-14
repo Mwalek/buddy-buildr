@@ -449,6 +449,7 @@ const headerSocialAreaStyle = document.querySelector(
 
 function headerSocialAreaAnimation(params) {
   console.log(params);
+  console.log(headerSocialAreaStyle.bottom);
   headerSocialAreaStyle.bottom !== "0px"
     ? (headerSocialAreaStyle.bottom = "0px")
     : (headerSocialAreaStyle.bottom = "60px");
@@ -468,17 +469,21 @@ function toggleVisibilityCustom(
   callbackParams = ""
 ) {
   let params = callbackParams;
-  if (ele.style.visibility === "") {
-    let defaultVisibility;
-    visibleByDefault
-      ? (defaultVisibility = display)
-      : (defaultVisibility = "hidden");
-    ele.style.visibility = defaultVisibility;
-  }
-  ele.style.visibility !== display
-    ? (ele.style.visibility = display)
-    : (ele.style.visibility = "hidden");
-  if (params === "") params = ele.style.visibility;
+
+  // console.log(ele.classList.contains("visible"));
+  // if (ele.style.visibility === "") {
+  //   let defaultVisibility;
+  //   visibleByDefault
+  //     ? (defaultVisibility = display)
+  //     : (defaultVisibility = "hidden");
+  //   ele.style.visibility = defaultVisibility;
+  // }
+  ele.classList.toggle("visible-on-mobile");
+  // ele.style.visibility !== display
+  //   ? (ele.style.visibility = display)
+  //   : (ele.style.visibility = "hidden");
+  if (params === "") params = ele.classList.contains("visible-on-mobile");
+  // If a callback is provided, invoke the callback with the parameters
   callback !== "" && callback(params);
 }
 
