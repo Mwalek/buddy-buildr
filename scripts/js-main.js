@@ -447,16 +447,24 @@ const headerSocialAreaStyle = document.querySelector(
   ".header-social-area"
 ).style;
 
-function headerSocialAreaAnimation(params) {
-  console.log(params);
+function headerSocialAreaAnimation(
+  defaultVisibility,
+  displayProperty,
+  currentVisibility,
+  initialParams
+) {
+  const headerRight = document.getElementById("header-right");
+  console.log(currentVisibility);
   console.log(headerSocialAreaStyle.bottom);
   headerSocialAreaStyle.bottom !== "0px"
     ? (headerSocialAreaStyle.bottom = "0px")
     : (headerSocialAreaStyle.bottom = "60px");
-  if (params === "hidden") {
-    document.getElementById("header-right").style.height = "0px";
+  if (currentVisibility === "hidden") {
+    headerRight.style.height = "0px";
+    headerRight.style.visibility = "hidden";
   } else {
-    document.getElementById("header-right").style.height = "60px";
+    headerRight.style.height = "60px";
+    headerRight.style.visibility = "visible";
   }
 }
 
@@ -468,7 +476,9 @@ function toggleVisibilityCustom(
   callback = "",
   callbackParams = ""
 ) {
-  let params = callbackParams;
+  const initialParams = callbackParams;
+  let params = "";
+  let currentVisibility = display;
 
   // console.log(ele.classList.contains("visible"));
   // if (ele.style.visibility === "") {
@@ -482,9 +492,18 @@ function toggleVisibilityCustom(
   // ele.style.visibility !== display
   //   ? (ele.style.visibility = display)
   //   : (ele.style.visibility = "hidden");
-  if (params === "") params = ele.classList.contains("visible-on-mobile");
+  if (ele.classList.contains("visible-on-mobile")) {
+    currentVisibility = "visible";
+  } else {
+    currentVisibility = "hidden";
+  }
+  if (initialParams === "") {
+    params = [visibleByDefault, display, currentVisibility, initialParams];
+  } else if (Array.isArray(initialParams)) {
+    params = [visibleByDefault, display, currentVisibility, initialParams];
+  }
   // If a callback is provided, invoke the callback with the parameters
-  callback !== "" && callback(params);
+  callback !== "" && callback(...params);
 }
 
 function customVisibilityToggler(e) {
@@ -498,3 +517,25 @@ function customVisibilityToggler(e) {
     headerSocialAreaAnimation
   );
 }
+
+// Run this function every time the screen is resized
+
+window.addEventListener(
+  "resize",
+  function (event) {
+    const headerRight = document.getElementById("header-right");
+    const headerSocial = document.querySelector(".header-social-area");
+    let w = screen.width;
+    if (w >= 650) {
+      headerRight.style.height = "60px";
+      headerRight.style.visibility = "visible";
+      headerSocial.style.bottom = "0px";
+    } else {
+      headerRight.style.height = "0px";
+      headerRight.style.visibility = "hidden";
+      headerSocial.style.bottom = "60px";
+    }
+    console.log(`resized to ${w}`);
+  },
+  true
+);
