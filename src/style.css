@@ -1422,6 +1422,10 @@ main img {
     height: 100%;
     /* display: block; */
   }
+
+  .header-right {
+    transition: none;
+  }
 }
 
 .header-section {
@@ -1433,9 +1437,7 @@ main img {
 }
 
 .header-right {
-  visibility: hidden;
   transition: all 0.4s linear;
-  height: 0;
   /* display: none; */
 }
 
