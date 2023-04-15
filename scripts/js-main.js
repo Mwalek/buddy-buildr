@@ -279,7 +279,7 @@ window.onclick = function (event) {
 jQuery(document).ready(function ($) {
   $(".toggle-header-right").on("click", function () {
     // $("#header-right").slideToggle(400, "linear");
-    $(".toggle-header-right .alert_count").toggle("slow");
+    // $(".toggle-header-right .alert_count").toggle("slow");
   });
 });
 
@@ -453,6 +453,7 @@ function headerSocialAreaAnimation(
   currentVisibility,
   initialParams
 ) {
+  console.log("headerSocialAreaAnimation has been invoked! ");
   const headerRight = document.getElementById("header-right");
   console.log(currentVisibility);
   console.log(headerSocialAreaStyle.bottom);
@@ -460,6 +461,7 @@ function headerSocialAreaAnimation(
     ? (headerSocialAreaStyle.bottom = "0px")
     : (headerSocialAreaStyle.bottom = "60px");
   if (currentVisibility === "hidden") {
+    console.log("Hiding should happen!");
     headerRight.style.height = "0px";
     headerRight.style.visibility = "hidden";
   } else {
@@ -468,9 +470,17 @@ function headerSocialAreaAnimation(
   }
 }
 
-// Toggle Visibility Custom Function
+/**
+ *
+ * @param {obj} selector
+ * The selector used to get the el whose visibility should be toggled.
+ * @param {bool} visibleByDefault Whether ele is visible when page is loaded.
+ * @param {string} display The new visibility value for the element.
+ * @param {string} callback Function after toggling the ele's display.
+ * @param {string|array} callbackParams Args to pass to the callback.
+ */
 function toggleVisibilityCustom(
-  ele,
+  selector,
   visibleByDefault = false,
   display = "visible",
   callback = "",
@@ -478,30 +488,47 @@ function toggleVisibilityCustom(
 ) {
   const initialParams = callbackParams;
   let params = "";
-  let currentVisibility = display;
+  // let currentVisibility = display;
+  let currentVisibility;
 
-  // console.log(ele.classList.contains("visible"));
-  // if (ele.style.visibility === "") {
-  //   let defaultVisibility;
-  //   visibleByDefault
-  //     ? (defaultVisibility = display)
-  //     : (defaultVisibility = "hidden");
-  //   ele.style.visibility = defaultVisibility;
-  // }
-  ele.classList.toggle("visible-on-mobile");
-  // ele.style.visibility !== display
-  //   ? (ele.style.visibility = display)
-  //   : (ele.style.visibility = "hidden");
-  if (ele.classList.contains("visible-on-mobile")) {
+  // console.log(selector.classList.contains("visible"));
+
+  // This block of code only runs once per page load.
+  if (selector.style.visibility === "") {
+    if (!display) selector.classList.add("visible");
+    console.log(`This condition is true: selector.style.visibility === ""`);
+    let defaultVisibility;
+    visibleByDefault
+      ? (defaultVisibility = display)
+      : (defaultVisibility = "hidden");
+    // Assign the default visibility to the element.
+    if (display) selector.classList.add("visible");
+  }
+  // selector.style.visibility !== display
+  //   ? (selector.style.visibility = display)
+  //   : (selector.style.visibility = "hidden");
+  if (
+    selector.classList.contains("visible") ||
+    selector.style.visibility !== "visible"
+  ) {
     currentVisibility = "visible";
+    console.log(`Block A "${selector.style.visibility}"`);
   } else {
     currentVisibility = "hidden";
+    console.log("Block B");
   }
+  /**
+   * Toggle the visibility class ONLY after performing toggle action.
+   */
+  selector.classList.toggle("visible");
+
   if (initialParams === "") {
     params = [visibleByDefault, display, currentVisibility, initialParams];
   } else if (Array.isArray(initialParams)) {
     params = [visibleByDefault, display, currentVisibility, initialParams];
   }
+  // Change the element's visibility after toggle action.
+  selector.style.visibility = currentVisibility;
   // If a callback is provided, invoke the callback with the parameters
   callback !== "" && callback(...params);
 }
@@ -510,12 +537,21 @@ function customVisibilityToggler(e) {
   e = e || window.event;
   // let target = e.target || e.srcElement;
   // console.log(target);
+
+  // Toggle visibility of the right header element.
   toggleVisibilityCustom(
     document.querySelector("#header-right"),
     false,
     "visible",
     headerSocialAreaAnimation
   );
+
+  // Toggle visibility of the notification bubble element.
+  const notificationBubble = document.querySelector(
+    ".toggle-header-right .alert_count"
+  );
+
+  toggleVisibilityCustom(notificationBubble, true, "hidden");
 }
 
 // Run this function every time the screen is resized
@@ -539,3 +575,10 @@ window.addEventListener(
   },
   true
 );
+
+function toggleNotifcationBubble() {
+  const notificationBubble = document.querySelector(
+    ".toggle-header-right .alert_count"
+  );
+  toggleVisibilityCustom(notificationBubble, true, "hidden");
+}
