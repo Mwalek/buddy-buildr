@@ -1425,6 +1425,8 @@ main img {
 
   .header-right {
     transition: none;
+    visibility: visible;
+    height: 60px;
   }
 }
 
@@ -1437,6 +1439,8 @@ main img {
 }
 
 .header-right {
+  visibility: hidden;
+  height: 0px;
   transition: all 0.4s linear;
   /* display: none; */
 }

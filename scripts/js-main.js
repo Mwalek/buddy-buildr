@@ -531,9 +531,9 @@ window.addEventListener(
       headerRight.style.visibility = "visible";
       headerSocial.style.bottom = "0px";
     } else {
-      headerRight.style.height = "0px";
-      headerRight.style.visibility = "hidden";
-      headerSocial.style.bottom = "60px";
+      // headerRight.style.height = "0px";
+      // headerRight.style.visibility = "hidden";
+      // headerSocial.style.bottom = "60px";
     }
     console.log(`resized to ${w}`);
   },
