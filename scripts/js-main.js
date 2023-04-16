@@ -561,15 +561,22 @@ window.addEventListener(
   function (event) {
     const headerRight = document.getElementById("header-right");
     const headerSocial = document.querySelector(".header-social-area");
+    /* Disable transitions while resizing */
+    headerRight.classList.add("notransition"); // Disable transitions
+    headerSocial.classList.add("notransition"); // Disable transitions
+    setTimeout(function () {
+      headerRight.classList.remove("notransition"); // Re-enable transitions
+      headerSocial.classList.remove("notransition"); // Re-enable transitions
+    }, 1000);
     let w = screen.width;
     if (w >= 650) {
       headerRight.style.height = "60px";
       headerRight.style.visibility = "visible";
       headerSocial.style.bottom = "0px";
     } else {
-      // headerRight.style.height = "0px";
-      // headerRight.style.visibility = "hidden";
-      // headerSocial.style.bottom = "60px";
+      headerRight.style.height = "0px";
+      headerRight.style.visibility = "hidden";
+      headerSocial.style.bottom = "60px";
     }
     console.log(`resized to ${w}`);
   },
@@ -582,3 +589,10 @@ function toggleNotifcationBubble() {
   );
   toggleVisibilityCustom(notificationBubble, true, "hidden");
 }
+
+/**
+ * Steps to replicate the header bug (unconfimed):
+ * 1. @ viewport less than 650px, toggle the header down.
+ * 2. Change the viewport to any size still less than 650px.
+ * 3. Toggle the header at least twice.
+ */
