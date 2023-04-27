@@ -588,15 +588,9 @@ window.addEventListener(
       timer = setTimeout(function () {
         console.log("The window hasn't been recently resized.");
       }, 5000);
-      // headerRight.style.height = "60px";
-      // headerRight.style.visibility = "visible";
-      // headerSocial.style.bottom = "0px";
-      toggleVisibilityCustom(
-        document.querySelector("#header-right"),
-        true,
-        "visible",
-        headerSocialAreaAnimation
-      );
+      headerRight.style.height = "60px";
+      headerRight.style.visibility = "visible";
+      headerSocial.style.bottom = "0px";
     } else {
       // Run code in the block below if the window hasn't been recently resized.
       // timer = setTimeout(function () {
