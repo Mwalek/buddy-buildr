@@ -274,15 +274,6 @@ window.onclick = function (event) {
   }
 };
 
-// Jquery to toggle header right
-
-jQuery(document).ready(function ($) {
-  $(".toggle-header-right").on("click", function () {
-    // $("#header-right").slideToggle(400, "linear");
-    // $(".toggle-header-right .alert_count").toggle("slow");
-  });
-});
-
 /* Search Template */
 
 jQuery(document).ready(function ($) {
@@ -514,18 +505,30 @@ function toggleVisibilityCustom(
   if (selector.classList.contains("visible")) {
     currentVisibility = "hidden";
     console.log(`Block A "${selector.style.visibility}"`);
+  } else if (selector.style.visibility === "" && display === "hidden") {
+    currentVisibility = "hidden";
+    console.log(`Block B "${selector.style.visibility}"`);
   } else if (selector.style.visibility === "") {
     currentVisibility = "visible";
-    console.log(`Block B "${selector.style.visibility}"`);
+    console.log(`Block C "${selector.style.visibility}"`);
   } else if (selector.style.visibility === "hidden") {
     currentVisibility = "visible";
-    console.log("Block C");
+    console.log("Block D");
     // selector.classList.remove("visible");
   }
   /**
    * Toggle the visibility class ONLY after performing toggle action.
    */
   selector.classList.toggle("visible");
+
+  // if (
+  //   !selector.classList.contains("visible") &&
+  //   currentVisibility === "hidden"
+  // ) {
+  //   // Do nothing.
+  // } else {
+  //   selector.classList.toggle("visible");
+  // }
 
   if (initialParams === "") {
     params = [visibleByDefault, display, currentVisibility, initialParams];
@@ -561,7 +564,7 @@ function customVisibilityToggler(e) {
     ".toggle-header-right .alert_count"
   );
 
-  toggleVisibilityCustom(notificationBubble, true, "hidden");
+  toggleVisibilityCustom(notificationBubble, true, "hidden", notifBubbleToggle);
 }
 
 // Run this function every time the screen is resized
@@ -615,11 +618,16 @@ window.addEventListener(
   true
 );
 
-function toggleNotifcationBubble() {
+function notifBubbleToggle(
+  defaultVisibility,
+  displayProperty,
+  currentVisibility,
+  initialParams
+) {
   const notificationBubble = document.querySelector(
     ".toggle-header-right .alert_count"
   );
-  toggleVisibilityCustom(notificationBubble, true, "hidden");
+  notificationBubble.style.display = currentVisibility;
 }
 
 /**
