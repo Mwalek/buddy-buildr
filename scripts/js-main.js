@@ -455,7 +455,7 @@ function headerSocialAreaAnimation(
 ) {
   console.log("headerSocialAreaAnimation has been invoked! ");
   const headerRight = document.getElementById("header-right");
-  console.log(currentVisibility);
+  console.log(`Current Visibility = ${currentVisibility}`);
   console.log(headerSocialAreaStyle.bottom);
   headerSocialAreaStyle.bottom !== "0px"
     ? (headerSocialAreaStyle.bottom = "0px")
@@ -494,28 +494,33 @@ function toggleVisibilityCustom(
   // console.log(selector.classList.contains("visible"));
 
   // This block of code only runs once per page load.
-  if (selector.style.visibility === "") {
-    if (!display) selector.classList.add("visible");
-    console.log(`This condition is true: selector.style.visibility === ""`);
-    let defaultVisibility;
-    visibleByDefault
-      ? (defaultVisibility = display)
-      : (defaultVisibility = "hidden");
-    // Assign the default visibility to the element.
-    if (display) selector.classList.add("visible");
-  }
+  // if (selector.style.visibility === "") {
+  //   if (!display) selector.classList.add("visible");
+  //   console.log(`This condition is true: selector.style.visibility === ""`);
+  //   let defaultVisibility;
+  //   visibleByDefault
+  //     ? (defaultVisibility = display)
+  //     : (defaultVisibility = "hidden");
+  //   // Assign the default visibility to the element.
+  //   if (display) selector.classList.add("visible");
+  // }
   // selector.style.visibility !== display
   //   ? (selector.style.visibility = display)
   //   : (selector.style.visibility = "hidden");
-  if (
-    selector.classList.contains("visible") ||
-    selector.style.visibility !== "visible"
-  ) {
-    currentVisibility = "visible";
-    console.log(`Block A "${selector.style.visibility}"`);
-  } else {
+  console.log(`${selector.style.visibility}`);
+  if (selector.style.visibility === "") {
+    console.log("Pass");
+  }
+  if (selector.classList.contains("visible")) {
     currentVisibility = "hidden";
-    console.log("Block B");
+    console.log(`Block A "${selector.style.visibility}"`);
+  } else if (selector.style.visibility === "") {
+    currentVisibility = "visible";
+    console.log(`Block B "${selector.style.visibility}"`);
+  } else if (selector.style.visibility === "hidden") {
+    currentVisibility = "visible";
+    console.log("Block C");
+    // selector.classList.remove("visible");
   }
   /**
    * Toggle the visibility class ONLY after performing toggle action.
@@ -528,7 +533,12 @@ function toggleVisibilityCustom(
     params = [visibleByDefault, display, currentVisibility, initialParams];
   }
   // Change the element's visibility after toggle action.
-  selector.style.visibility = currentVisibility;
+  // selector.style.visibility = currentVisibility;
+  if (selector.classList.contains("visible")) {
+    selector.style.visibility = "hidden";
+  } else {
+    selector.style.visibility = "visible";
+  }
   // If a callback is provided, invoke the callback with the parameters
   callback !== "" && callback(...params);
 }
@@ -555,12 +565,13 @@ function customVisibilityToggler(e) {
 }
 
 // Run this function every time the screen is resized
+const headerRight = document.getElementById("header-right");
+const headerSocial = document.querySelector(".header-social-area");
+let timer = null;
 
 window.addEventListener(
   "resize",
   function (event) {
-    const headerRight = document.getElementById("header-right");
-    const headerSocial = document.querySelector(".header-social-area");
     /* Disable transitions while resizing */
     headerRight.classList.add("notransition"); // Disable transitions
     headerSocial.classList.add("notransition"); // Disable transitions
@@ -570,13 +581,40 @@ window.addEventListener(
     }, 1000);
     let w = screen.width;
     if (w >= 650) {
-      headerRight.style.height = "60px";
-      headerRight.style.visibility = "visible";
-      headerSocial.style.bottom = "0px";
+      if (timer !== null) {
+        clearTimeout(timer);
+      }
+      // Run code in the block below if the window hasn't been recently resized.
+      timer = setTimeout(function () {
+        console.log("The window hasn't been recently resized.");
+      }, 5000);
+      // headerRight.style.height = "60px";
+      // headerRight.style.visibility = "visible";
+      // headerSocial.style.bottom = "0px";
+      toggleVisibilityCustom(
+        document.querySelector("#header-right"),
+        true,
+        "visible",
+        headerSocialAreaAnimation
+      );
     } else {
-      headerRight.style.height = "0px";
+      // Run code in the block below if the window hasn't been recently resized.
+      // timer = setTimeout(function () {
+      //   console.log("The window hasn't been recently resized.");
+      // }, 5000);
+      // headerRight.style.height = "0px";
+      // headerRight.style.visibility = "hidden";
+      // headerSocial.style.bottom = "60px";
+      // toggleVisibilityCustom(
+      //   document.querySelector("#header-right"),
+      //   true,
+      //   "hidden",
+      //   headerSocialAreaAnimation
+      // );
+      headerRight.classList.remove("visible");
       headerRight.style.visibility = "hidden";
-      headerSocial.style.bottom = "60px";
+      headerRight.style.height = "0px";
+      headerSocialAreaStyle.bottom = "60px";
     }
     console.log(`resized to ${w}`);
   },
